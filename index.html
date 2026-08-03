@@ -482,63 +482,125 @@ html:`<div class="split" style="align-items:center;gap:clamp(20px,4vw,64px)">
  </div>
 </div>`},
 
-{heat:1,phase:'The Dashboard',
-notes:'Our live dashboard, built on the same REDCap discipline. Real UHN cohort, n=254. Walk the tabs, then the KPIs. This is not a mockup - it runs at hf-transplant.prod.uhn.io.',
-html:`<div>
- <div class="eyebrow">The dashboard &middot; live at UHN</div>
- <div class="dash tight">
-  <div class="dash-hd"><span class="dot"></span><span class="mono">Heart Transplants &middot; Peter Munk / Ajmera</span><span class="mono live-tag">&#9679; LIVE</span><span class="mono" style="margin-left:auto;opacity:.7">n = 254 &middot; source 2026-07-27</span></div>
-  <div class="steps" style="margin-bottom:.7rem">
-   <span class="step" style="color:var(--ink);border-color:var(--accent)">Overview</span><span class="step">Peri-op</span><span class="step">Outcomes</span><span class="step">Donor</span><span class="step">Surgeon</span><span class="step">Rejection</span><span class="step">Waitlist</span><span class="step">Matching</span><span class="step">PROTECT PGD</span>
+{heat:1,vol:61,phase:'The dashboard',
+notes:'This is the real dashboard, running. Let it populate before you talk — the tiles count up, the survival curve draws, offers scroll in. The point: before this existed, nobody in the program could answer "how are we doing?" without a chart review.',
+html:`<div class="eyebrow">The pivot</div>
+ <h2>A program you can actually see</h2>
+ <div class="dash">
+  <div class="dash-hd">
+   <span class="dot"></span><span class="mono">transplant-dev.heartfunction.ca</span>
+   <span class="mono live-tag">LIVE</span>
+   <span class="mono" style="margin-left:auto">n = 254 &#183; ALL YEARS</span>
   </div>
+
   <div class="kpis">
-   <div class="kpi"><span class="kl">30-day survival</span><span class="kv" data-count="91.3" data-dec="1">0</span><span class="ku">%</span><span class="spark"><i style="--w:91%"></i></span></div>
-   <div class="kpi"><span class="kl">1-yr survival</span><span class="kv" data-count="86.3" data-dec="1">0</span><span class="ku">%</span><span class="spark"><i style="--w:86%"></i></span></div>
-   <div class="kpi"><span class="kl">Severe PGD</span><span class="kv" data-count="13" data-dec="1">0</span><span class="ku">%</span><span class="spark"><i style="--w:40%"></i></span></div>
-   <div class="kpi"><span class="kl">Post-HTx LOS</span><span class="kv" data-count="17">0</span><span class="ku">d</span><span class="spark"><i style="--w:55%"></i></span></div>
-   <div class="kpi"><span class="kl">&ge;2R at 3 mo</span><span class="kv" data-count="8" data-dec="1">0</span><span class="ku">%</span><span class="spark"><i style="--w:26%"></i></span></div>
-   <div class="kpi"><span class="kl">Donor use</span><span class="kv" data-count="18.5" data-dec="1">0</span><span class="ku">%</span><span class="spark"><i style="--w:60%"></i></span></div>
+   ${[['SEVERE PGD','%',13.0,0,'33 / 254'],['VASOPLEGIA','%',45.4,.12,'108 / 238'],
+      ['ICU LOS','d',8,.24,'median, n = 79'],['POST-HTx LOS','d',17,.36,'median, n = 201'],
+      ['DIALYSIS','%',32.9,.48,'82 / 249'],['30-DAY SURVIVAL','%',91.3,.6,'22 deaths / 253']]
+     .map(k=>`<div class="kpi cine" style="--del:${k[3]}s">
+        <span class="kl">${k[0]}</span>
+        <span class="kv" data-count="${k[2]}" data-dec="${Number.isInteger(k[2])?0:1}" data-del="${400+k[3]*1000}">0</span><span class="ku">${k[1]}</span>
+        <span class="kl" style="margin-top:.3rem;font-size:10.5px;opacity:.8">${k[4]}</span>
+      </div>`).join('')}
   </div>
+
   <div class="dash-body">
-   <div class="panel"><span class="pt">Severe PGD by donor type</span>
-    <svg viewBox="0 0 200 120" style="margin-top:.3rem">
-     <line x1="16" y1="104" x2="192" y2="104" stroke="rgba(0,0,0,.2)"/>
-     <rect class="growup" style="--del:.4s" x="46" y="66" width="42" height="38" fill="var(--slate)"/>
-     <rect class="growup" style="--del:.7s" x="120" y="16" width="42" height="88" fill="var(--red)"/>
-     <text x="67" y="118" text-anchor="middle" style="font-size:10px">DBD</text>
-     <text x="141" y="118" text-anchor="middle" style="font-size:10px">DCD</text>
-     <text x="67" y="60" text-anchor="middle" style="font-size:11px;fill:var(--slate)">11.9%</text>
-     <text x="141" y="10" text-anchor="middle" style="font-size:11px;fill:var(--red)">40%</text>
+   <div class="panel">
+    <span class="pt">TRANSPLANTS BY CALENDAR YEAR</span>
+    <svg viewBox="0 0 420 150" aria-label="Annual transplant volume">
+     ${[[35,'2020'],[34,'2021'],[20,'2022'],[43,'2023'],[38,'2024'],[44,'2025'],[40,'2026']].map((v,i)=>`
+       <rect x="${20+i*57}" y="${130-v[0]*2.4}" width="38" height="${v[0]*2.4}" rx="1"
+         fill="${i===6?'var(--gold)':(i===2?'var(--red)':'var(--slate)')}" opacity=".9" class="growup" style="--del:${.5+i*.12}s"/>
+       <text x="${39+i*57}" y="${124-v[0]*2.4}" text-anchor="middle" style="font-size:12px;font-weight:600;fill:var(--ink)">${v[0]}</text>
+       <text x="${39+i*57}" y="146" text-anchor="middle" style="font-size:10.5px">${v[1]}</text>`).join('')}
+     <line x1="10" y1="130" x2="410" y2="130" stroke="var(--dim)" stroke-width="1" opacity=".3"/>
     </svg>
    </div>
-   <div class="panel"><span class="pt">Waitlist &middot; blood group</span>
-    <div style="display:flex;flex-direction:column;gap:.45rem;margin-top:.3rem">
-     <div><div class="mono" style="font-size:11.5px;display:flex;justify-content:space-between"><span>O</span><span style="color:var(--red)">31</span></div><span class="spark"><i style="--w:84%;background:var(--red)"></i></span></div>
-     <div><div class="mono" style="font-size:11.5px;display:flex;justify-content:space-between"><span>A</span><span>4</span></div><span class="spark"><i style="--w:11%"></i></span></div>
-     <div><div class="mono" style="font-size:11.5px;display:flex;justify-content:space-between"><span>B</span><span>2</span></div><span class="spark"><i style="--w:5%"></i></span></div>
+
+   <div class="panel">
+    <span class="pt">SURVIVAL vs ISHLT BENCHMARK</span>
+    <svg viewBox="0 0 420 150" aria-label="Survival against benchmark">
+     <path d="M14,22 L70,26 L130,34 L200,40 L280,46 L360,52 L410,56" fill="none"
+       stroke="var(--dim)" stroke-width="2" stroke-dasharray="5 5" opacity=".65"
+       class="draw" style="--len:430;--dur:1.8s;--del:.6s"/>
+     <path d="M14,20 L70,22 L130,26 L200,30 L280,33 L360,36 L410,38" fill="none"
+       stroke="var(--gold)" stroke-width="3" class="draw" style="--len:430;--dur:2s;--del:1s"/>
+     <text x="414" y="42" style="font-size:11px;fill:var(--gold)">US</text>
+     <text x="414" y="60" style="font-size:11px">ISHLT</text>
+     <line x1="14" y1="132" x2="410" y2="132" stroke="var(--dim)" stroke-width="1" opacity=".3"/>
+     <text x="14" y="146" style="font-size:11px">0</text><text x="400" y="146" style="font-size:11px">5y</text>
+    </svg>
+   </div>
+
+   <div class="panel">
+    <span class="pt">DONOR OFFERS · TODAY</span>
+    <div class="ticker">
+     <div class="tick-in">
+      ${[['22:14','DCD · 34M · 380 km','accept'],['21:02','DBD · 51F · local','review'],
+         ['19:47','DBD · 28M · 610 km','accept'],['17:30','DCD · 44M · 220 km','decline'],
+         ['15:58','DBD · 39F · local','accept'],['22:14','DCD · 34M · 380 km','accept'],
+         ['21:02','DBD · 51F · local','review'],['19:47','DBD · 28M · 610 km','accept'],
+         ['17:30','DCD · 44M · 220 km','decline'],['15:58','DBD · 39F · local','accept']]
+       .map(o=>`<div class="row"><span class="t">${o[0]}</span><span class="d">${o[1]}</span><span class="s ${o[2]}">${o[2].toUpperCase()}</span></div>`).join('')}
+     </div>
     </div>
-    <div class="mono" style="font-size:11px;margin-top:.5rem;opacity:.7">84% of the list is group O.</div>
-   </div>
-   <div class="panel"><span class="pt">1-yr survival &middot; Kaplan-Meier</span>
-    <svg viewBox="0 0 200 120" style="margin-top:.3rem">
-     <line x1="16" y1="12" x2="16" y2="104" stroke="rgba(0,0,0,.2)"/>
-     <line x1="16" y1="104" x2="192" y2="104" stroke="rgba(0,0,0,.2)"/>
-     <polyline class="draw" style="--len:340;--dur:2s;--del:.6s" points="16,20 40,24 70,30 120,34 192,38" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
-     <text x="150" y="34" style="font-size:9px;fill:var(--accent)">86.3%</text>
-     <text x="16" y="116" style="font-size:9px">0</text><text x="176" y="116" style="font-size:9px">365 d</text>
-    </svg>
    </div>
   </div>
  </div>
- <div class="mono" style="margin-top:.5rem;opacity:.65;font-size:12px">Live &middot; hf-transplant.prod.uhn.io &middot; nine tabs, one cohort. Every number below is a decision we can now interrogate.</div>
-</div>`},
+ <div class="qrblock" data-frag>
+   <svg viewBox="0 0 33 33" class="qr" aria-label="QR code linking to the program dashboard">
+    <rect width="33" height="33" fill="#FFFFFF"/>
+    <path d="M2,2h7v1h-7zM10,2h1v1h-1zM12,2h3v1h-3zM17,2h3v1h-3zM24,2h7v1h-7zM2,3h1v1h-1zM8,3h1v1h-1zM12,3h1v1h-1zM14,3h3v1h-3zM18,3h1v1h-1zM24,3h1v1h-1zM30,3h1v1h-1zM2,4h1v1h-1zM4,4h3v1h-3zM8,4h1v1h-1zM10,4h3v1h-3zM16,4h5v1h-5zM24,4h1v1h-1zM26,4h3v1h-3zM30,4h1v1h-1zM2,5h1v1h-1zM4,5h3v1h-3zM8,5h1v1h-1zM12,5h1v1h-1zM16,5h1v1h-1zM19,5h3v1h-3zM24,5h1v1h-1zM26,5h3v1h-3zM30,5h1v1h-1zM2,6h1v1h-1zM4,6h3v1h-3zM8,6h1v1h-1zM11,6h2v1h-2zM15,6h3v1h-3zM19,6h1v1h-1zM22,6h1v1h-1zM24,6h1v1h-1zM26,6h3v1h-3zM30,6h1v1h-1zM2,7h1v1h-1zM8,7h1v1h-1zM10,7h3v1h-3zM14,7h1v1h-1zM17,7h1v1h-1zM19,7h1v1h-1zM24,7h1v1h-1zM30,7h1v1h-1zM2,8h7v1h-7zM10,8h1v1h-1zM12,8h1v1h-1zM14,8h1v1h-1zM16,8h1v1h-1zM18,8h1v1h-1zM20,8h1v1h-1zM22,8h1v1h-1zM24,8h7v1h-7zM11,9h1v1h-1zM16,9h3v1h-3zM22,9h1v1h-1zM2,10h1v1h-1zM4,10h1v1h-1zM8,10h2v1h-2zM11,10h3v1h-3zM15,10h2v1h-2zM18,10h1v1h-1zM21,10h1v1h-1zM25,10h1v1h-1zM28,10h1v1h-1zM30,10h1v1h-1zM3,11h2v1h-2zM6,11h2v1h-2zM11,11h1v1h-1zM15,11h2v1h-2zM19,11h1v1h-1zM21,11h5v1h-5zM29,11h2v1h-2zM2,12h1v1h-1zM5,12h1v1h-1zM8,12h1v1h-1zM12,12h2v1h-2zM17,12h1v1h-1zM21,12h8v1h-8zM30,12h1v1h-1zM2,13h1v1h-1zM5,13h3v1h-3zM9,13h3v1h-3zM14,13h2v1h-2zM17,13h2v1h-2zM20,13h3v1h-3zM24,13h2v1h-2zM27,13h1v1h-1zM3,14h1v1h-1zM8,14h3v1h-3zM15,14h1v1h-1zM18,14h1v1h-1zM22,14h1v1h-1zM24,14h1v1h-1zM30,14h1v1h-1zM2,15h1v1h-1zM4,15h2v1h-2zM7,15h1v1h-1zM9,15h4v1h-4zM17,15h1v1h-1zM21,15h2v1h-2zM24,15h2v1h-2zM29,15h2v1h-2zM2,16h1v1h-1zM5,16h1v1h-1zM8,16h1v1h-1zM12,16h2v1h-2zM15,16h3v1h-3zM19,16h1v1h-1zM21,16h1v1h-1zM23,16h2v1h-2zM26,16h1v1h-1zM30,16h1v1h-1zM2,17h6v1h-6zM10,17h4v1h-4zM16,17h3v1h-3zM23,17h1v1h-1zM25,17h2v1h-2zM2,18h1v1h-1zM6,18h4v1h-4zM11,18h3v1h-3zM15,18h2v1h-2zM18,18h1v1h-1zM20,18h3v1h-3zM24,18h2v1h-2zM30,18h1v1h-1zM4,19h1v1h-1zM11,19h1v1h-1zM13,19h7v1h-7zM21,19h2v1h-2zM24,19h1v1h-1zM28,19h3v1h-3zM2,20h9v1h-9zM13,20h2v1h-2zM17,20h1v1h-1zM21,20h2v1h-2zM25,20h1v1h-1zM27,20h1v1h-1zM30,20h1v1h-1zM6,21h2v1h-2zM13,21h1v1h-1zM15,21h1v1h-1zM22,21h1v1h-1zM24,21h2v1h-2zM2,22h2v1h-2zM8,22h2v1h-2zM11,22h1v1h-1zM13,22h1v1h-1zM15,22h1v1h-1zM18,22h1v1h-1zM22,22h6v1h-6zM29,22h1v1h-1zM10,23h3v1h-3zM14,23h1v1h-1zM17,23h2v1h-2zM20,23h1v1h-1zM22,23h1v1h-1zM26,23h3v1h-3zM30,23h1v1h-1zM2,24h7v1h-7zM10,24h2v1h-2zM14,24h6v1h-6zM22,24h1v1h-1zM24,24h1v1h-1zM26,24h1v1h-1zM30,24h1v1h-1zM2,25h1v1h-1zM8,25h1v1h-1zM11,25h2v1h-2zM16,25h3v1h-3zM20,25h3v1h-3zM26,25h1v1h-1zM30,25h1v1h-1zM2,26h1v1h-1zM4,26h3v1h-3zM8,26h1v1h-1zM11,26h3v1h-3zM15,26h2v1h-2zM18,26h1v1h-1zM21,26h7v1h-7zM29,26h2v1h-2zM2,27h1v1h-1zM4,27h3v1h-3zM8,27h1v1h-1zM11,27h1v1h-1zM13,27h1v1h-1zM16,27h2v1h-2zM19,27h1v1h-1zM23,27h1v1h-1zM26,27h3v1h-3zM30,27h1v1h-1zM2,28h1v1h-1zM4,28h3v1h-3zM8,28h1v1h-1zM10,28h2v1h-2zM13,28h2v1h-2zM16,28h7v1h-7zM26,28h1v1h-1zM29,28h2v1h-2zM2,29h1v1h-1zM8,29h1v1h-1zM11,29h2v1h-2zM15,29h4v1h-4zM21,29h2v1h-2zM27,29h1v1h-1zM2,30h7v1h-7zM10,30h1v1h-1zM13,30h2v1h-2zM16,30h1v1h-1zM18,30h1v1h-1zM22,30h1v1h-1zM25,30h1v1h-1zM27,30h1v1h-1zM30,30h1v1h-1z" fill="#0E1C1E"/>
+   </svg>
+   <div>
+    <div class="qr-t">hf-transplant.prod.uhn.io</div>
+    <div class="qr-s">Live program dashboard.<br>Requires the UHN network or VPN.</div>
+   </div>
+  </div>
+  <p class="sub" data-frag>It does not argue with us. It <strong>informs in real time</strong>, challenges assumptions about how the program is running, creates accountability, and lets us adjust in weeks rather than at the annual review.</p>`},
+
+{heat:1,vol:61,phase:'Year to date',
+notes:'',
+html:`<div class="eyebrow">Where we are right now</div>
+ <h2>2026, year to date</h2>
+ <div class="dash" style="margin-top:.8rem">
+  <div class="dash-hd"><span class="dot"></span><span class="mono">CURRENT YTD &#183; DBD + DCD</span>
+   <span class="mono live-tag">LIVE</span>
+   <span class="mono" style="margin-left:auto">SOURCE 27 JULY 2026</span></div>
+  <div class="kpis">
+   ${[['TRANSPLANTS','',40,0,'32 DBD &#183; 8 DCD'],
+      ['DCD SHARE','%',20.0,.1,'8 / 40'],
+      ['ON MACHINE PERFUSION','%',100,.2,'8 / 8 DCD'],
+      ['SEVERE PGD','%',12.5,.3,'5 / 40'],
+      ['30-DAY MORTALITY','%',10.3,.4,'4 deaths / 40'],
+      ['DIALYSIS RECOVERY','%',94.7,.5,'18 / 19 off dialysis']]
+     .map(k=>`<div class="kpi cine" style="--del:${k[3]}s">
+        <span class="kl">${k[0]}</span>
+        <span class="kv" data-count="${k[2]}" data-dec="${Number.isInteger(k[2])?0:1}" data-del="${400+k[3]*1000}">0</span><span class="ku">${k[1]}</span>
+        <span class="kl" style="margin-top:.3rem;font-size:10.5px;opacity:.8">${k[4]}</span>
+      </div>`).join('')}
+  </div>
+  <div class="kpis" style="margin-top:.5rem">
+   ${[['VASOPLEGIA','%',47.4,.6,'18 / 38'],
+      ['ICU LOS','d',7,.7,'median &#183; n = 35'],
+      ['POST-HTx LOS','d',18,.8,'median &#183; n = 29'],
+      ['DIALYSIS','%',47.5,.9,'19 / 40'],
+      ['TRACHEOSTOMY','%',12.5,1.1,'5 / 40']]
+     .map(k=>`<div class="kpi cine" style="--del:${k[3]}s">
+        <span class="kl">${k[0]}</span>
+        <span class="kv" data-count="${k[2]}" data-dec="${Number.isInteger(k[2])?0:1}" data-del="${400+k[3]*1000}">0</span><span class="ku">${k[1]}</span>
+        <span class="kl" style="margin-top:.3rem;font-size:10.5px;opacity:.8">${k[4]}</span>
+      </div>`).join('')}
+  </div>
+ </div>
+ <p class="sub" data-frag>Forty transplants by the end of July, <strong>one in five from a DCD donor</strong>, every one of them on machine perfusion. Dialysis is high at 47.5%, and <strong>nineteen of twenty recovered kidney function</strong>.</p>`},
 
 {heat:1,vol:61,phase:'Autocorrection',
 notes:'Watch the sequence: the PGD tile trips red, the alert fires, the team changes practice, and the curve bends back. This loop — measure, flag, respond, re-measure — is what let us grow without trading away outcomes. Say plainly that we found this because we were looking, not because someone complained.',
 html:`<div class="split">
  <div>
   <div class="eyebrow">The correction loop</div>
-  <h2>A dashboard that argues back</h2>
+  <h2>A dashboard that informs</h2>
   <p data-frag>A reporting tool tells you what happened last year. A <em>correcting</em> tool tells you this month, while you can still act.</p>
   <ul class="sub">
    <li data-frag><strong>Measure continuously</strong>, not at the annual review.</li>
@@ -838,6 +900,30 @@ html:`<div class="split" style="align-items:start">
  </svg></div>
 </div>`},
 
+{heat:1,phase:'The Dashboard',
+notes:'What happens if we do not innovate. At Stanford, patients CAN dual-list - listed at a second centre in another region to shorten the wait. A real advantage of this system, but a workaround for scarcity, not a cure: it favours those who can travel and afford it. If we do not grow usable hearts and prevent preventable failure, access is rationed by means, not medicine. Adapted from the Big Enough to Be Brave "other future" slide.',
+html:`<div class="split" style="align-items:center">
+ <div>
+  <div class="eyebrow">If we do not innovate</div>
+  <h2 style="max-width:20ch">Scarcity does not disappear &mdash; it gets rationed</h2>
+  <p data-frag>At Stanford, patients can <strong>dual-list</strong> &mdash; listed at a second centre in another region to shorten the wait. It is a real advantage of this system.</p>
+  <p class="sub" data-frag>But it is a workaround for scarcity, not a cure. It favours those who can travel, relocate, and afford it &mdash; <strong>a filter that has nothing to do with medicine:</strong> not sickness, not urgency, not blood group.</p>
+  <p class="sub" data-frag>If we do not grow the number of usable hearts and prevent the failures we can prevent, access is decided by <em>who can move</em> &mdash; not who is sickest.</p>
+  <p class="sub" data-frag>Innovation is how access stays about medicine.</p>
+ </div>
+ <div class="stagew"><svg viewBox="0 0 520 300" aria-label="Two responses to the same shortage">
+  <circle cx="46" cy="150" r="10" fill="var(--ink)"/>
+  <text x="46" y="184" text-anchor="middle" class="lab" style="font-size:12px">THE SHORTAGE</text>
+  <path d="M64,142 C140,116 190,90 286,78" fill="none" stroke="var(--red)" stroke-width="2.4" stroke-dasharray="7 6" class="draw" style="--len:250;--dur:1.4s;--del:.5s"/>
+  <path d="M64,158 C140,184 190,210 286,222" fill="none" stroke="var(--cyan)" stroke-width="2.4" class="draw" style="--len:250;--dur:1.4s;--del:1.1s"/>
+  <text x="298" y="72" class="lab" style="font-size:14px;fill:var(--red);opacity:0;animation:rise .6s ease 1.7s both">Dual-listing</text>
+  <text x="298" y="94" class="mono" style="font-size:11px;fill:var(--dim);opacity:0;animation:rise .6s ease 1.9s both">for those who can travel</text>
+  <text x="298" y="218" class="lab" style="font-size:14px;fill:var(--cyan);opacity:0;animation:rise .6s ease 2.3s both">Capacity that grows</text>
+  <text x="298" y="240" class="mono" style="font-size:11px;fill:var(--dim);opacity:0;animation:rise .6s ease 2.5s both">for everyone on the list</text>
+  <text x="0" y="288" class="mono" style="font-size:11px;fill:var(--dim);opacity:0;animation:rise .7s ease 2.8s both">TWO RESPONSES TO THE SAME SHORTAGE</text>
+ </svg></div>
+</div>`},
+
 {heat:1,vol:61,phase:'Where we go',
 notes:'',
 html:`<div class="eyebrow">Where we go</div>
@@ -1053,36 +1139,6 @@ html:`<div class="split" style="align-items:center">
  </svg></div>
 </div>`},
 
-{heat:2,vol:61,phase:'Off hours',
-notes:'',
-html:`<div class="split" style="align-items:center">
- <div>
-  <div class="eyebrow">A bias we went looking for</div>
-  <h2>Are we more likely to decline on a weekend?</h2>
-  <p data-frag>The field has already tested the <em>mystical</em> explanations. A UNOS review of a decade of adult transplants found that full moons and Friday the 13th changed nothing: not donors, not recipients, not outcomes, not volume.</p>
-  <p class="sub" data-frag>So we tested the mundane one. It is the obvious worry. Offers arrive overnight, at Christmas, on a long weekend, when the retrieval team is thinnest and the person on call is alone.</p>
-  <p class="sub" data-frag>We tested it across <strong>1,216 offers</strong> with a decision and a date. Weekday acceptance <strong>22.3%</strong>. Weekend <strong>24.7%</strong>. Statutory holidays <strong>27.6%</strong>.</p>
-  <p class="sub" data-frag>No difference in any direction that the numbers can support. <em>The bias we expected to find is not there.</em></p>
-  <p class="mono sub" data-frag>Weekend vs weekday p = 0.39. Weekend or holiday vs weekday p = 0.25. DCD offers alone, 40.9% vs 37.3%, p = 0.65.</p>
-  <p class="refline" data-frag>Goodnight Moon: the (not so) mystical effect of folklore and superstitions on cardiac transplantation. <em>J Heart Lung Transplant</em>, 2024. UNOS adult transplants 2013&ndash;2023. Confirm authors, volume and pages before presenting.</p>
- </div>
- <div class="stagew"><svg viewBox="0 0 470 320" aria-label="Donor offer acceptance by day of week">
-  <line x1="52" y1="240" x2="452" y2="240" stroke="var(--dim)" stroke-width="1" opacity=".3"/>
-  <line x1="52" y1="40" x2="52" y2="240" stroke="var(--dim)" stroke-width="1" opacity=".3"/>
-  <text x="44" y="46" text-anchor="end" style="font-size:12px">40%</text>
-  <text x="44" y="244" text-anchor="end" style="font-size:12px">0</text>
-  <line x1="52" y1="128" x2="452" y2="128" stroke="var(--dim)" stroke-width="1" stroke-dasharray="5 5" opacity=".45"/>
-  <text x="456" y="132" class="lab" style="font-size:11.5px;fill:var(--dim)">22.8% overall</text>
-  ${[['Mon',19.5,169],['Tue',22.9,210],['Wed',20.0,175],['Thu',27.0,159],['Fri',22.1,199],['Sat',22.8,167],['Sun',27.0,137]]
-    .map((d,i)=>{const x=74+i*54, h=200*d[1]/40, wknd=i>=5;
-    return `<rect x="${x-17}" y="${240-h}" width="34" height="${h}" rx="1" fill="${wknd?'var(--gold)':'var(--slate)'}" opacity=".9" class="growup" style="--del:${.3+i*.12}s"/>
-    <text x="${x}" y="${232-h}" text-anchor="middle" style="font-size:12px;font-weight:600;fill:${wknd?'var(--gold)':'var(--slate)'};opacity:0;animation:rise .5s ease ${.9+i*.12}s both">${d[1]}</text>
-    <text x="${x}" y="260" text-anchor="middle" style="font-size:11.5px">${d[0]}</text>`;}).join('')}
-  <text x="52" y="292" class="lab" style="font-size:12.5px;fill:var(--dim)">ACCEPTANCE RATE &#183; 1,216 OFFERS</text>
-  <text x="52" y="312" class="lab" style="font-size:12.5px;fill:var(--gold);opacity:0;animation:rise .7s ease 2.2s both">WEEKEND</text>
- </svg></div>
-</div>`},
-
 {heat:2,phase:'Donor QI',
 notes:'Donor QI = the published "Moving Beyond the Perfect Donor" work (JACC Adv 2025). Two-thirds of viable hearts are discarded. Five interventions - led by a dashboard - doubled utilization and halved missed opportunities, with a trend to less severe PGD. This is the dashboard thesis, proven.',
 html:`<div>
@@ -1149,23 +1205,14 @@ html:`<div class="sectdiv" style="max-width:44ch">
  <div class="mono" style="margin-top:1.4rem;color:var(--accent)">EUAN ASHLEY &middot; STANFORD</div>
 </div>`},
 
-{heat:3,vol:61,phase:'The vision',
-notes:'',
-html:`<div class="sectdiv">
- <div class="sd-n">03</div>
- <h2 class="cine">The vision</h2>
- <p class="sd-sub" data-frag>What the numbers make possible, and where we go from here</p>
- <div class="sd-bar"></div>
-</div>`},
-
 {heat:3,phase:'Re-imagining Care',
-notes:'Three pillars: the match, the signal, the journey.',
+notes:'Three pillars in the order the slides follow: the signal (wearable-informed allocation, integrated with TRUE-HF), the match (agentic AI), the journey (REBOOT).',
 html:`<div>
  <div class="eyebrow">Three pillars</div>
  <div class="agenda">
-  <div class="ag-row" style="--del:.05s"><div class="ag-n">01</div><div class="ag-body"><h3>Agentic AI donor&ndash;recipient matching</h3><p>An agent scores every offer against the whole waitlist &mdash; and accounts for group O, sensitization, and equity.</p></div></div>
-  <div class="ag-row" style="--del:.35s"><div class="ag-n">02</div><div class="ag-body"><h3>Wearable data, integrated with TRUE-HF</h3><p>Continuous physiology replaces the every-few-months snapshot.</p></div></div>
-  <div class="ag-row" style="--del:.65s"><div class="ag-n">03</div><div class="ag-body"><h3>REBOOT 2.0 &mdash; coaching through the journey</h3><p>The signal and the dashboard feed a coach and the patient with timely, specific nudges.</p></div></div>
+  <div class="ag-row" style="--del:.05s"><div class="ag-n">01</div><div class="ag-body"><h3>The signal &mdash; a wearable-informed allocation score</h3><p>Continuous wearable data, integrated with TRUE-HF, replaces the every-few-months snapshot.</p></div></div>
+  <div class="ag-row" style="--del:.35s"><div class="ag-n">02</div><div class="ag-body"><h3>The match &mdash; agentic AI donor&ndash;recipient matching</h3><p>An agent scores every offer against the whole waitlist &mdash; accounting for group O, sensitization, and equity.</p></div></div>
+  <div class="ag-row" style="--del:.65s"><div class="ag-n">03</div><div class="ag-body"><h3>The journey &mdash; REBOOT 2.0 coaching</h3><p>An mHealth trial that supports the patient and learns to predict rejection and infection.</p></div></div>
  </div>
 </div>`},
 
@@ -1176,7 +1223,7 @@ html:`<div class="split" style="align-items:center;gap:clamp(20px,3.6vw,58px)">
   <div class="eyebrow">The vision &middot; two to three years</div>
   <h2>A wearable-informed allocation score</h2>
   <p data-frag>A deep-learning model trained on daily wearable data from patients with heart failure predicts unplanned healthcare events. We published that this year.</p>
-  <p class="sub" data-frag>The next step is to point it at the listing decision &mdash; not how sick someone looked in clinic three months ago, but how they are actually living, measured continuously.</p>
+  <p class="sub" data-frag>The next step is to point it at the listing decision &mdash; not how sick someone looked in clinic three months ago, but how they are actually living, measured continuously and integrated with TRUE-HF.</p>
   <p class="sub" data-frag>Status today is a snapshot taken by whoever was in the room. <em>It could be a trajectory.</em></p>
  </div>
  <div class="stagew">
@@ -1210,62 +1257,6 @@ html:`<div>
   <span class="node hot">Human decision</span>
  </div>
  <p class="sub" style="max-width:60ch;margin-top:1.3rem">It runs the PGD AI score across the eligible waitlist, simulates each pairing, and ranks matches to minimize predicted PGD and maximize survival &mdash; while surfacing the group O and sensitized candidates the current system leaves waiting. Decision support, never autopilot.</p>
-</div>`},
-
-{heat:3,vol:61,phase:'Automation',
-notes:'',
-html:`<div class="split" style="align-items:center">
- <div>
-  <div class="eyebrow">The vision &#183; the offer window</div>
-  <h2>The risk score should already be on the screen</h2>
-  <p data-frag>An offer arrives at ten at night. Angiogram images on a disc that has to be couriered. One person reads it and decides.</p>
-  <p class="sub" data-frag>An <strong>agentic system</strong> would do the reading first. One agent per source, working in parallel, converging on a single profile before anyone picks up the phone.</p>
-  <p class="sub" data-frag>The <strong>chest CT gives us sizing that weight never could</strong>: thoracic dimensions and predicted heart mass, measured rather than estimated.</p>
-  <p class="sub" data-frag>It does not allocate. The clinician decides. The reasoning simply becomes <em>explicit, auditable, and available at three in the morning.</em></p>
- </div>
- <div class="stagew"><svg viewBox="0 0 460 340" aria-label="Agents converging on a donor profile">
-  ${[['Echocardiogram','function'],['Echo report','interpretation'],['Chest CT','thoracic dimensions'],['Donor chart','labs, haemodynamics']]
-    .map((ag,i)=>`<g class="inx" style="--del:${.3+i*.16}s;--fx:-30px">
-      <rect x="0" y="${i*58}" width="188" height="46" rx="3" fill="var(--lift)" stroke="var(--accent)" stroke-width="1.5"/>
-      <text x="14" y="${i*58+21}" style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;fill:var(--ink)">${ag[0]}</text>
-      <text x="14" y="${i*58+37}" class="mono" style="font-size:11px;fill:var(--dim)">${ag[1]}</text>
-    </g>`).join('')}
-  ${[23,81,139,197].map((y,i)=>`
-    <path d="M188,${y} C232,${y} 244,152 280,152" fill="none" stroke="var(--accent)" stroke-width="1.3" opacity=".4"
-      class="draw" style="--len:130;--dur:.9s;--del:${1.2+i*.14}s"/>
-    <circle r="4" fill="var(--gold)" class="flow" style="--p:path('M188,${y} C232,${y} 244,152 280,152');--fd:2.6s;--fdl:${(i*0.5).toFixed(2)}s"/>`).join('')}
-  <rect x="280" y="96" width="176" height="112" rx="4" fill="var(--lift)" stroke="var(--gold)" stroke-width="2"
-    class="cine" style="--del:1.8s"/>
-  <text x="368" y="122" text-anchor="middle" class="mono" style="font-size:11px;fill:var(--dim)">PREDICTED SEVERE PGD</text>
-  <text x="368" y="164" text-anchor="middle" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:38px;fill:var(--red)" data-count="14" data-dec="0" data-del="2000">0</text>
-  <text x="368" y="190" text-anchor="middle" class="mono" style="font-size:11px;fill:var(--dim)">PHENOTYPE AND MITIGATION</text>
-  <text x="0" y="272" class="mono" style="font-size:11.5px;fill:var(--dim);opacity:0;animation:rise .7s ease 2.8s both">FOUR AGENTS &#183; ONE PROFILE</text>
-  <text x="0" y="294" class="mono" style="font-size:11.5px;fill:var(--dim);opacity:0;animation:rise .7s ease 3s both">CROSS-SOURCE VALIDATION, NOT ONE DOCUMENT TRUSTED ALONE</text>
- </svg></div>
-</div>`},
-
-{heat:3,phase:'Wearables',
-notes:'Pillar 2. Continuous physiology into TRUE-HF; surface rejection and decompensation before symptoms. Fill device and integration status.',
-html:`<div class="split" style="align-items:center">
- <div>
-  <div class="eyebrow">Pillar 02 &middot; the signal</div>
-  <h2>Wearable data, integrated with TRUE-HF</h2>
-  <p class="lede sub" style="max-width:30ch">Continuous physiology replaces the every-few-months snapshot.</p>
-  <p class="sub" style="max-width:52ch">Wrist and patch sensors stream heart rate, variability, activity, and rhythm. Integrated into TRUE-HF, they surface early signals of rejection, decompensation, and deconditioning &mdash; before symptoms, before a clinic visit.</p>
-  <div class="refline">Device: <span class="fill">&hellip;</span> &middot; TRUE-HF integration: <span class="fill">status &mdash; fill</span> &middot; cohort: <span class="fill">&hellip;</span>.</div>
- </div>
- <div class="stagew">
-  <svg viewBox="0 0 320 170">
-   <text x="0" y="14" class="lab" style="font-size:11px">CONTINUOUS SIGNAL vs CLINIC SNAPSHOTS</text>
-   <line x1="12" y1="150" x2="308" y2="150" stroke="rgba(0,0,0,.2)"/>
-   <path class="draw" style="--len:900;--dur:2.6s" d="M12,110 C40,60 52,60 70,96 C86,128 96,70 112,92 C130,116 140,54 158,90 C176,124 186,66 204,96 C222,124 232,70 250,98 C268,122 280,80 308,96" fill="none" stroke="var(--accent)" stroke-width="2.2"/>
-   <g fill="var(--red)"><circle cx="40" cy="150" r="4"/><circle cx="150" cy="150" r="4"/><circle cx="270" cy="150" r="4"/></g>
-   <text x="24" y="166" style="font-size:9px;fill:var(--red)">visit</text>
-   <text x="134" y="166" style="font-size:9px;fill:var(--red)">visit</text>
-   <text x="254" y="166" style="font-size:9px;fill:var(--red)">visit</text>
-  </svg>
-  <div class="mono" style="margin-top:.3rem;opacity:.7;font-size:12px">Three data points a year vs a continuous stream.</div>
- </div>
 </div>`},
 
 {heat:3,phase:'Coaching',
