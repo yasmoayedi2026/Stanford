@@ -793,18 +793,33 @@ html:`<div class="split" style="align-items:center">
 </div>`},
 
 {heat:2,phase:'Studies at a Glance',
-notes:'The organizing thread of the studies: (1) explain severe PGD - define it, predict it; (2) that understanding lets us select donors smarter - say yes more often, safely; (3) and safer yes on both sides lets us expand the waitlist - sensitized, ABOi, outreach. If we can better understand PGD, we can accept more donors, and list more patients.',
+notes:'The organizing thread of the evidence: explain severe PGD (define, measure, predict), which lets us accept extended donors (say yes to hearts others decline), which lets us open the waitlist (sensitized, group O, remote patients). One drawn spine, no cards. If we can better understand PGD, we can accept more donors, and list more patients.',
 html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
  <div class="eyebrow">The thread</div>
  <h2 style="max-width:24ch">Understand the worst outcome, and you can be braver about the rest</h2>
- <div style="display:flex;align-items:stretch;gap:.9rem;margin-top:1.6rem;flex-wrap:wrap">
-  <div class="card" data-frag style="flex:1;min-width:220px"><span class="n">01</span><h3>Explain severe PGD</h3><p>Define it, measure it, predict it, the consortium, the risk factors, PGD AI.</p></div>
-  <div style="align-self:center;font:800 1.6rem/1 -apple-system,system-ui;color:#B07A00">&rarr;</div>
-  <div class="card" data-frag style="flex:1;min-width:220px"><span class="n">02</span><h3>Accept extended donors</h3><p>When you can predict failure, you can say <em>yes</em> to donors others decline: Donor QI, the audit, matched outcomes.</p></div>
-  <div style="align-self:center;font:800 1.6rem/1 -apple-system,system-ui;color:#B07A00">&rarr;</div>
-  <div class="card" data-frag style="flex:1;min-width:220px"><span class="n">03</span><h3>Open the waitlist</h3><p>And a safer <em>yes</em> on both sides opens the list: sensitized patients, Group O, the ones told to wait.</p></div>
+ <div style="position:relative;margin-top:2rem;padding-left:64px;max-width:900px">
+  <svg viewBox="0 0 40 300" preserveAspectRatio="none" style="position:absolute;left:8px;top:6px;width:40px;height:calc(100% - 12px);overflow:visible">
+   <path class="draw" style="--len:180;--dur:.7s;--del:.4s" d="M20,10 L20,128" fill="none" stroke="#B07A00" stroke-width="2.5" stroke-linecap="round"/>
+   <path d="M13,118 L20,132 L27,118" fill="none" stroke="#B07A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;animation:rise .4s ease 1s both"/>
+   <path class="draw" style="--len:180;--dur:.7s;--del:1.5s" d="M20,150 L20,268" fill="none" stroke="#8A3F73" stroke-width="2.5" stroke-linecap="round"/>
+   <path d="M13,258 L20,272 L27,258" fill="none" stroke="#8A3F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;animation:rise .4s ease 2.1s both"/>
+  </svg>
+  <div style="display:grid;gap:2.1rem">
+   <div data-frag>
+    <div style="font:800 clamp(21px,2.3vw,30px)/1.2 -apple-system,system-ui;color:#0E6E6E">Explain severe PGD</div>
+    <div class="sub" style="margin-top:.25rem;max-width:56ch">Define it, measure it, predict it: the consortium, the risk factors, PGD AI.</div>
+   </div>
+   <div data-frag>
+    <div style="font:800 clamp(21px,2.3vw,30px)/1.2 -apple-system,system-ui;color:#B07A00">Accept extended donors</div>
+    <div class="sub" style="margin-top:.25rem;max-width:56ch">When you can predict failure, you can say <em>yes</em> to hearts others decline.</div>
+   </div>
+   <div data-frag>
+    <div style="font:800 clamp(21px,2.3vw,30px)/1.2 -apple-system,system-ui;color:#8A3F73">Open the waitlist</div>
+    <div class="sub" style="margin-top:.25rem;max-width:56ch">And a safer <em>yes</em> on both sides lists the patients told to wait: sensitized, group O, remote.</div>
+   </div>
+  </div>
  </div>
- <p class="mono sub" data-frag style="margin-top:1.4rem;max-width:none">If we can better understand PGD, we can accept more donors, and list more patients.</p>
+ <p class="mono sub" data-frag style="margin-top:1.8rem;max-width:none">If we can better understand PGD, we can accept more donors, and list more patients.</p>
 </div>`},
 
 {heat:2,phase:'Studies at a Glance',
@@ -836,7 +851,7 @@ html:`<div class="split" style="align-items:center;grid-template-columns:1fr 1.1
 </div>`},
 
 {heat:2,phase:'Studies at a Glance',
-notes:'PGD AI: the first machine-learning model for severe PGD, built on consortium data. AUC 0.70 versus RADIAL 0.52; externally validated with calibration. The calculator is the point: risk at the moment of matching, not after the fact. Skeptic quote is real (senior transplant physician, 2024); the answer is prospective testing. CONFIRM cohort n and final metrics before presenting.',
+notes:'PGD AI: the first machine-learning model for severe PGD, built on consortium data. AUC 0.70 versus RADIAL 0.52; externally validated with calibration. The calculator is the point: risk at the moment of matching, not after the fact. CONFIRM cohort n and final metrics before presenting.',
 html:`<div class="split" style="align-items:center">
  <div>
   <div class="eyebrow">PGD AI &middot; from the consortium</div>
@@ -846,7 +861,6 @@ html:`<div class="split" style="align-items:center">
    <div class="m"><span class="mn" style="opacity:.45"><span data-count="0.52" data-dec="2" data-del="700">0</span></span><span class="ml">RADIAL &middot; AUC</span></div>
   </div>
   <p class="sub" data-frag style="max-width:44ch;margin-top:.7rem">Trained on consortium data, externally validated with calibration. Risk at the moment of <em>matching</em>, not after the fact.</p>
-  <p class="sub mono" data-frag style="max-width:48ch;margin-top:.7rem;font-size:12.5px">&ldquo;I remain unsure whether using your calculator will truly impact our decision-making&hellip; I hope I am wrong.&rdquo; <span style="opacity:.65">&mdash; senior transplant physician, 2024.</span>&ensp;The answer is a trial, not an argument.</p>
  </div>
  <div class="stagew">
   <div style="max-width:380px;margin:0 auto;background:#fff;border:1px solid rgba(0,0,0,.14);border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.10);overflow:hidden">
@@ -1001,48 +1015,6 @@ html:`<div class="split" style="align-items:center">
  </div>
 </div>`},
 
-{heat:1,phase:'The Dashboard',
-notes:'MERGED Merle + desensitization protocol, one slide. cPRA >80% - the patients nobody else will list. Built IN PARTNERSHIP WITH OUR HLA IMMUNOLOGISTS. Donor acceptance: next well-sized ABO-compatible donor; positive crossmatch NOT a contraindication - cross antibodies that dilute out at 1:16 with pre-op PLEX, tiered by HLA risk (cPRA 79.6 / 61.8 with A2 / would drop to 0). Protocol on top of standard triple therapy. Confirm consent before naming the patient.',
-html:`<div>
- <div class="eyebrow">Sensitization &middot; in partnership with our HLA immunologists</div>
- <h2 style="max-width:30ch">Merle: transplanting across a positive crossmatch</h2>
- <div class="split" style="align-items:start;gap:clamp(18px,3vw,44px);margin-top:.7rem">
-  <div>
-   <p class="lede sub" data-frag style="max-width:34ch">A calculated PRA over <em>80%</em>, the patients nobody else will list.</p>
-   <p class="sub" data-frag style="max-width:46ch">A stepwise pathway designed <strong>with our HLA immunologists</strong>: antibody profiling, tiered donor acceptance, and a perioperative protocol on top of standard triple therapy. A positive crossmatch is <em>not</em> a contraindication when the antibodies <strong>dilute out at 1:16</strong>.</p>
-   <div data-frag style="margin-top:.9rem;display:grid;gap:.5rem">
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#0C8A84"></span><span>Lowest risk to cross, cPRA <strong style="color:var(--ink)">79.6</strong></span></div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#B8651A"></span><span>Intermediate (A2), cPRA <strong style="color:var(--ink)">61.8</strong></span></div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#B33326"></span><span>Extremely high, would drop cPRA to <strong style="color:var(--ink)">0</strong></span></div>
-   </div>
-  </div>
-  <div data-frag>
-   <table style="width:100%;border-collapse:collapse;font-size:clamp(10.5px,1.05vw,13px);line-height:1.3">
-    <thead><tr style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase">
-     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">POD</th>
-     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Intervention</th>
-     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Dose</th>
-     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Bedside notes</th></tr></thead>
-    <tbody>
-     ${[['0','Solumedrol','1000 / 500 mg','Pre-op &amp; pre-reperfusion (OR)'],
-        ['0','Tocilizumab','10 mg/kg IV &times;1','Pre-reperfusion (OR)'],
-        ['0&ndash;4','PLEX','5 sessions (1&times;/day)','Intraop; 1 plasma vol/session; FFP'],
-        ['0&ndash;2','ATG','1 mg/kg/day &times;3','T-cell depletion; hold if lymphs &lt;0.05'],
-        ['5','IVIG','1 g/kg IV','After PLEX; infuse &ge;12 h'],
-        ['5','Rituximab','375 mg/m&sup2;','B-cell depletion; PCP prophylaxis'],
-        ['6','IVIG','1 g/kg IV','After PLEX; infuse &ge;12 h']]
-       .map((r,i)=>`<tr style="background:${i%2?'rgba(0,0,0,.03)':'transparent'}">
-         <td style="padding:.28rem .4rem;font-family:'IBM Plex Mono',monospace;color:var(--accent);white-space:nowrap">${r[0]}</td>
-         <td style="padding:.28rem .4rem;font-weight:600;color:var(--ink)">${r[1]}</td>
-         <td style="padding:.28rem .4rem;font-family:'IBM Plex Mono',monospace;white-space:nowrap">${r[2]}</td>
-         <td style="padding:.28rem .4rem;color:var(--dim)">${r[3]}</td></tr>`).join('')}
-    </tbody>
-   </table>
-   <p class="mono" style="margin-top:.5rem;opacity:.7;font-size:11px">On top of standard triple immunosuppression (tacrolimus + prednisone + MMF).</p>
-  </div>
- </div>
-</div>`},
-
 {heat:1,vol:61,phase:'Where we go',
 notes:'',
 html:`<div class="eyebrow">Where we go</div>
@@ -1084,6 +1056,48 @@ html:`<div class="eyebrow">Where we go</div>
   <text x="408" y="552" text-anchor="end" class="lab" style="font-size:15px;fill:var(--ink);opacity:0;animation:rise .6s ease 2.6s both">Toronto</text>
  </svg></div>
  </div>`},
+
+{heat:1,phase:'The Dashboard',
+notes:'MERGED Merle + desensitization protocol, one slide. cPRA >80% - the patients nobody else will list. Built IN PARTNERSHIP WITH OUR HLA IMMUNOLOGISTS. Donor acceptance: next well-sized ABO-compatible donor; positive crossmatch NOT a contraindication - cross antibodies that dilute out at 1:16 with pre-op PLEX, tiered by HLA risk (cPRA 79.6 / 61.8 with A2 / would drop to 0). Protocol on top of standard triple therapy. Confirm consent before naming the patient.',
+html:`<div>
+ <div class="eyebrow">Sensitization &middot; in partnership with our HLA immunologists</div>
+ <h2 style="max-width:30ch">Merle: transplanting across a positive crossmatch</h2>
+ <div class="split" style="align-items:start;gap:clamp(18px,3vw,44px);margin-top:.7rem">
+  <div>
+   <p class="lede sub" data-frag style="max-width:34ch">A calculated PRA over <em>80%</em>, the patients nobody else will list.</p>
+   <p class="sub" data-frag style="max-width:46ch">A stepwise pathway designed <strong>with our HLA immunologists</strong>: antibody profiling, tiered donor acceptance, and a perioperative protocol on top of standard triple therapy. A positive crossmatch is <em>not</em> a contraindication when the antibodies <strong>dilute out at 1:16</strong>.</p>
+   <div data-frag style="margin-top:.9rem;display:grid;gap:.5rem">
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#0C8A84"></span><span>Lowest risk to cross, cPRA <strong style="color:var(--ink)">79.6</strong></span></div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#B8651A"></span><span>Intermediate (A2), cPRA <strong style="color:var(--ink)">61.8</strong></span></div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:clamp(12.5px,1.25vw,15px);color:var(--dim)"><span style="width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:#B33326"></span><span>Extremely high, would drop cPRA to <strong style="color:var(--ink)">0</strong></span></div>
+   </div>
+  </div>
+  <div data-frag>
+   <table style="width:100%;border-collapse:collapse;font-size:clamp(10.5px,1.05vw,13px);line-height:1.3">
+    <thead><tr style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase">
+     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">POD</th>
+     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Intervention</th>
+     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Dose</th>
+     <th style="padding:.3rem .4rem;border-bottom:1.5px solid var(--accent)">Bedside notes</th></tr></thead>
+    <tbody>
+     ${[['0','Solumedrol','1000 / 500 mg','Pre-op &amp; pre-reperfusion (OR)'],
+        ['0','Tocilizumab','10 mg/kg IV &times;1','Pre-reperfusion (OR)'],
+        ['0&ndash;4','PLEX','5 sessions (1&times;/day)','Intraop; 1 plasma vol/session; FFP'],
+        ['0&ndash;2','ATG','1 mg/kg/day &times;3','T-cell depletion; hold if lymphs &lt;0.05'],
+        ['5','IVIG','1 g/kg IV','After PLEX; infuse &ge;12 h'],
+        ['5','Rituximab','375 mg/m&sup2;','B-cell depletion; PCP prophylaxis'],
+        ['6','IVIG','1 g/kg IV','After PLEX; infuse &ge;12 h']]
+       .map((r,i)=>`<tr style="background:${i%2?'rgba(0,0,0,.03)':'transparent'}">
+         <td style="padding:.28rem .4rem;font-family:'IBM Plex Mono',monospace;color:var(--accent);white-space:nowrap">${r[0]}</td>
+         <td style="padding:.28rem .4rem;font-weight:600;color:var(--ink)">${r[1]}</td>
+         <td style="padding:.28rem .4rem;font-family:'IBM Plex Mono',monospace;white-space:nowrap">${r[2]}</td>
+         <td style="padding:.28rem .4rem;color:var(--dim)">${r[3]}</td></tr>`).join('')}
+    </tbody>
+   </table>
+   <p class="mono" style="margin-top:.5rem;opacity:.7;font-size:11px">On top of standard triple immunosuppression (tacrolimus + prednisone + MMF).</p>
+  </div>
+ </div>
+</div>`},
 
 {heat:1,phase:'The Dashboard',
 notes:'The take-home of the evidence act: transplant is a team sport. Around the patient: anesthesiology (protects the OR), perfusion (rewarming and O2 extraction), HLA immunology (desensitization), pharmacy (risk-matched induction), NP/APP-led clinics (RAPID). The dashboard found the signals; the team owned the changes. CONFIRM role attributions.',
@@ -1256,36 +1270,6 @@ html:`<div class="split" style="align-items:center">
  </div>
 </div>`},
 
-{heat:3,vol:61,phase:'Ex vivo · Ali',
-notes:'ALI, placeholder scaffold. Replace the bullets and the schematic with your platform, your data, your outcomes. The animated circuit is here so it matches the rest of the deck; swap the labels to your device.',
-html:`<div class="split">
- <div>
-  <div class="eyebrow">Ex vivo perfusion</div>
-  <h2>From package to patient</h2>
-  <p data-frag>Perfusion reframes the donor heart. Not an object carried between two operations, but an organ receiving care, with measurable physiology, for the whole interval.</p>
-  <ul class="sub">
-   <li data-frag><strong>Assessment.</strong> Function you can observe rather than infer.</li>
-   <li data-frag><strong>Time.</strong> Distance becomes negotiable, which is what makes shared allocation real.</li>
-   <li data-frag><strong>Intervention.</strong> The first window in which we can treat the graft itself.</li>
-  </ul>
-  <p class="mono sub" data-frag>ALI: replace with platform, protocol, and local outcomes.</p>
- </div>
- <div class="stagew"><svg viewBox="0 0 460 330" aria-label="Ex vivo perfusion circuit">
-  <path d="M230,40 C334,40 408,104 408,164 C408,230 334,290 230,290 C126,290 52,230 52,164 C52,104 126,40 230,40 Z"
-    fill="none" stroke="var(--accent)" stroke-width="1.6" opacity=".35"/>
-  <rect x="24" y="140" width="56" height="50" rx="3" fill="var(--lift)" stroke="var(--accent)" stroke-width="1.6"/>
-  <text x="52" y="212" text-anchor="middle" class="lab" fill="var(--accent)">PUMP</text>
-  <rect x="380" y="140" width="56" height="50" rx="3" fill="var(--lift)" stroke="var(--accent)" stroke-width="1.6"/>
-  <text x="408" y="212" text-anchor="middle" class="lab" fill="var(--accent)">OXY</text>
-  <g transform="translate(142,84) scale(.92)">
-   <path class="beat" d="${HEART}" fill="none" stroke="var(--gold)" stroke-width="2.6"/>
-   <path class="beat" d="${HEART}" fill="var(--gold)" opacity=".1"/>
-  </g>
-  ${Array.from({length:14},(_,i)=>`<circle r="4.4" fill="var(--red)" class="flow"
-    style="--p:path('M230,40 C334,40 408,104 408,164 C408,230 334,290 230,290 C126,290 52,230 52,164 C52,104 126,40 230,40 Z');--fd:3.6s;--fdl:${(-i*0.257).toFixed(2)}s"/>`).join('')}
- </svg></div>
-</div>`},
-
 {heat:3,phase:'Coaching origin',
 notes:'REBOOT 1.0 - the Stanford original, published. The core question: can wearables reduce readmissions? One in five recipients is readmitted within 30 days (Grand Rounds data - CONFIRM exact figure/source). A wearable-based remote-monitoring pilot after heart transplant using a consumer multi-sensor suite (connected scale, BP cuff, activity/HR watch, thermometer, sleep sensor), building a continuous digital fingerprint of recovery in place of the periodic clinic snapshot. This is where REBOOT began - and what grew into the 400-patient REBOOT 2.0 RCT. CONFIRM exact citation, year, and n before presenting.',
 html:`<div class="split" style="align-items:center">
@@ -1325,17 +1309,12 @@ html:`<div class="split" style="align-items:center">
 </div>`},
 
 {heat:3,phase:'At Stanford',
-notes:'The Stanford ecosystem argument: no other campus has all of these within walking distance of a transplant program - the Center for Digital Health, AIMI and HAI for AI in medicine, Biodesign and the Silicon Valley innovation culture, Euan Ashley\'s precision-medicine and wearables work, and the transplant registry I co-built. Every pillar of my vision has a Stanford partner already in place. CONFIRM exact centre names and collaborators before presenting.',
-html:`<div>
+notes:'The alignment, drawn: each pillar of the vision wired to a Stanford partner already on campus. Agentic matching to AIMI/HAI/Data Science; wearable allocation to the Center for Digital Health and the Ashley lab; REBOOT coaching to Biodesign and industry next door; all standing on the registry I co-built. CONFIRM exact centre names and collaborators before presenting.',
+html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
  <div class="eyebrow">The Stanford ecosystem</div>
  <h2 style="max-width:26ch">An ecosystem completely aligned with elevating transplant</h2>
- <div class="cols" style="margin-top:1.1rem">
-  <div class="card" data-frag><span class="n">DIGITAL HEALTH</span><h3>Wearables &amp; remote care</h3><p>The Center for Digital Health and Ashley&rsquo;s precision-medicine work, the natural home for REBOOT and the wearable-informed score.</p></div>
-  <div class="card" data-frag><span class="n">AI</span><h3>AIMI &middot; HAI &middot; data science</h3><p>PGD AI and agentic donor&ndash;recipient matching partner with the strongest AI-in-medicine community anywhere.</p></div>
-  <div class="card" data-frag><span class="n">INNOVATION</span><h3>Biodesign &amp; the Valley</h3><p>A culture, and an industry next door, built to turn prototypes into products patients actually use.</p></div>
-  <div class="card" data-frag><span class="n">THE SPINE</span><h3>The registry is already here</h3><p>The Stanford Heart Transplant registry I co-built is the data foundation everything above stands on.</p></div>
- </div>
- <p class="sub" data-frag style="max-width:66ch;margin-top:1rem">Every pillar of this vision has a Stanford partner already on campus. I don&rsquo;t arrive with a program to install, I arrive with the bridge that makes this ecosystem <em>clinical, at the point of transplant</em>.</p>
+ <div style="margin-top:1.4rem"><svg viewBox="0 0 960 292" style="width:100%;display:block;overflow:visible" aria-label="Vision pillars wired to Stanford institutions"><text x="40" y="22" style="font:700 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;fill:#48605f">MY VISION</text><text x="920" y="22" text-anchor="end" style="font:700 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;fill:#48605f">ALREADY AT STANFORD</text><text x="40" y="72" style="font:800 20px -apple-system,system-ui;fill:#0E1C1E;opacity:0;animation:rise .5s ease 0.15s both">Agentic AI matching</text><path class="draw" style="--len:210;--dur:.5s;--del:0.35s" d="M368,65 L570,65" fill="none" stroke="#B07A00" stroke-width="2.5" stroke-linecap="round"/><circle cx="576" cy="65" r="4.5" fill="#B07A00" style="opacity:0;animation:rise .3s ease 0.75s both"/><text x="920" y="68" text-anchor="end" style="font:700 18px -apple-system,system-ui;fill:#B07A00;opacity:0;animation:rise .5s ease 0.85s both">AIMI &middot; HAI &middot; Data Science</text><text x="40" y="136" style="font:800 20px -apple-system,system-ui;fill:#0E1C1E;opacity:0;animation:rise .5s ease 0.7000000000000001s both">Wearable-informed allocation</text><path class="draw" style="--len:210;--dur:.5s;--del:0.9s" d="M368,129 L570,129" fill="none" stroke="#0E6E6E" stroke-width="2.5" stroke-linecap="round"/><circle cx="576" cy="129" r="4.5" fill="#0E6E6E" style="opacity:0;animation:rise .3s ease 1.3s both"/><text x="920" y="132" text-anchor="end" style="font:700 18px -apple-system,system-ui;fill:#0E6E6E;opacity:0;animation:rise .5s ease 1.4s both">Center for Digital Health</text><text x="920" y="150" text-anchor="end" style="font:500 12.5px ui-monospace,Menlo,monospace;fill:#48605f;opacity:0;animation:rise .5s ease 1.5s both">the Ashley lab</text><text x="40" y="200" style="font:800 20px -apple-system,system-ui;fill:#0E1C1E;opacity:0;animation:rise .5s ease 1.25s both">REBOOT coaching</text><path class="draw" style="--len:210;--dur:.5s;--del:1.4500000000000002s" d="M368,193 L570,193" fill="none" stroke="#8A3F73" stroke-width="2.5" stroke-linecap="round"/><circle cx="576" cy="193" r="4.5" fill="#8A3F73" style="opacity:0;animation:rise .3s ease 1.85s both"/><text x="920" y="196" text-anchor="end" style="font:700 18px -apple-system,system-ui;fill:#8A3F73;opacity:0;animation:rise .5s ease 1.9500000000000002s both">Biodesign</text><text x="920" y="214" text-anchor="end" style="font:500 12.5px ui-monospace,Menlo,monospace;fill:#48605f;opacity:0;animation:rise .5s ease 2.05s both">the Valley next door</text><line x1="40" y1="248" x2="920" y2="248" stroke="#0E1C1E" stroke-width="2.5" class="draw" style="--len:880;--dur:.9s;--del:2s"/><text x="480" y="276" text-anchor="middle" style="font:600 13.5px ui-monospace,Menlo,monospace;fill:#26383a;opacity:0;animation:rise .6s ease 2.6s both">THE SPINE &middot; the Stanford Heart Transplant registry I co-built &middot; already here</text></svg></div>
+ <p class="sub" data-frag style="max-width:none;margin-top:.8rem">I don&rsquo;t arrive with a program to install. I arrive with the bridge that makes this ecosystem <em>clinical, at the point of transplant</em>.</p>
 </div>`},
 
 {heat:3,phase:'Conclusions',
