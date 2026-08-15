@@ -424,7 +424,7 @@ svg text{font-family:"IBM Plex Mono",monospace;fill:var(--dim);font-weight:500}
 </head>
 <body data-heat="0">
 <div id="bg"></div>
-<div id="hint">← → navigate · R replay</div>
+<div id="hint">← → navigate · R replay · <b>P</b> presenter view · <b>N</b> notes</div>
 <div id="deck"></div>
 <div id="rail">
   <span id="sect">&nbsp;</span>
@@ -670,48 +670,9 @@ html:`<div class="eyebrow">Where we are right now</div>
  </div>
  `},
 
-{heat:1,vol:61,phase:'Autocorrection',
-notes:'Watch the sequence: the PGD tile trips red, the alert fires, the team changes practice, and the curve bends back. This loop, measure, flag, respond, re-measure, is what let us grow without trading away outcomes. Say plainly that we found this because we were looking, not because someone complained.',
-html:`<div class="split">
- <div>
-  <div class="eyebrow">The correction loop</div>
-  <h2>A dashboard that informs</h2>
-  <p data-frag>A reporting tool tells you what happened last year. A <em>correcting</em> tool tells you this month, while you can still act.</p>
-  <ul class="sub">
-   <li data-frag><strong>Measure continuously</strong>, not at the annual review.</li>
-   <li data-frag><strong>Flag against your own baseline</strong>, not only the registry mean.</li>
-   <li data-frag><strong>Close the loop.</strong> A metric nobody is accountable for is decoration.</li>
-  </ul>
-  <p class="sub" data-frag>We found this because we were <strong>looking</strong>, not because anyone complained.</p>
- </div>
-
- <div class="stagew">
-  <div class="dash tight">
-   <div class="dash-hd"><span class="dot"></span><span class="mono">SEVERE PGD · ROLLING 12 MONTHS</span></div>
-   <div class="alertbar">⚠ ABOVE BASELINE · REVIEW TRIGGERED</div>
-   <svg viewBox="0 0 440 210" aria-label="PGD rate rises, triggers review, then falls">
-    <line x1="30" y1="118" x2="430" y2="118" stroke="var(--dim)" stroke-width="1" stroke-dasharray="5 5" opacity=".55"/>
-    <text x="30" y="110" style="font-size:11px">BASELINE</text>
-    <path d="M30,120 C70,116 100,110 130,96 C160,82 180,58 210,48"
-      fill="none" stroke="var(--red)" stroke-width="3.5" class="draw" style="--len:250;--dur:1.6s;--del:.3s"/>
-    <circle cx="210" cy="48" r="8" fill="var(--red)" class="pop" style="--del:1.9s"/>
-    <circle cx="210" cy="48" r="20" fill="none" stroke="var(--red)" stroke-width="1.5" class="ring" style="--del:2.1s"/>
-    <line x1="210" y1="20" x2="210" y2="180" stroke="var(--red)" stroke-width="1" stroke-dasharray="4 5"
-      class="draw" style="--len:170;--dur:.5s;--del:2.1s" opacity=".7"/>
-    <text x="218" y="32" style="font-size:11px;fill:var(--red);opacity:0;animation:rise .6s ease 2.5s both">PRACTICE CHANGE</text>
-    <path d="M210,48 C240,56 270,86 310,106 C350,124 390,132 430,136"
-      fill="none" stroke="var(--gold)" stroke-width="3.5" class="draw" style="--len:250;--dur:1.8s;--del:3s"/>
-    <circle cx="430" cy="136" r="8" fill="var(--gold)" class="pop" style="--del:4.7s"/>
-    <line x1="30" y1="180" x2="430" y2="180" stroke="var(--dim)" stroke-width="1" opacity=".3"/>
-    <text x="30" y="200" style="font-size:11px">DETECTED</text>
-    <text x="430" y="200" text-anchor="end" style="font-size:11px;fill:var(--gold)">CORRECTED</text>
-   </svg>
-   <div class="steps">
-    ${['DETECT','FLAG','RESPOND','RE-MEASURE'].map((t,i)=>`<span class="step" style="animation:rise .5s ease ${2.2+i*.5}s both">${t}</span>`).join('')}
-   </div>
-  </div>
- </div>
-</div>`},
+{heat:2,phase:'What I have done',
+notes:'Signpost. Spoken: the first term I went after was capacity - because complications are what stop you growing. Everything that follows, through PROTECT, is capacity and outcomes.',
+html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center"><div class="eyebrow">Moving one term</div><h2 style="max-width:20ch;color:#8A3F73">Capacity</h2><p class="lede sub" style="max-width:46ch;margin-top:.6rem">Fewer complications, shorter stays, and a program with the room to say yes more often.</p><div style="margin-top:2.2rem;display:flex;align-items:center;gap:.7em;flex-wrap:wrap;opacity:0;animation:rise .6s ease .35s both"><span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">growth&ensp;=</span><span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">supply</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">access</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:700 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#8A3F73">capacity</span><span style="margin-left:1em;font:700 clamp(16px,1.7vw,22px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">outcomes &ge; today</span></div></div>`},
 
 {heat:1,phase:'The Dashboard',
 notes:'The point of the dashboard: it changes practice. Michael Fowler made evidence-based drug therapy the standard in heart failure with the Carvedilol trials; we apply the same discipline to transplant. Each signal on the left drove a concrete change on the right. VO2/Vanderbilt visit for PGD; Angiotensin II acquisition for vasoplegia.',
@@ -936,6 +897,10 @@ html:`<div class="eyebrow">Under way &#183; randomized and multicentre</div>
  </div>
  <p class="refline" data-frag><strong>Funding as validation.</strong> A peer-reviewed CIHR Accelerating Clinical Trials platform. In-kind support from CareDx and Traferox. Neither company has a role in study design, analysis or the decision to publish.</p>`},
 
+{heat:2,phase:'What I have done',
+notes:'Signpost. Spoken: with complications falling, we could go after supply - the hearts we were turning down.',
+html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center"><div class="eyebrow">Moving one term</div><h2 style="max-width:20ch;color:#0E6E6E">Supply</h2><p class="lede sub" style="max-width:46ch;margin-top:.6rem">More of the hearts we are already offered, actually used.</p><div style="margin-top:2.2rem;display:flex;align-items:center;gap:.7em;flex-wrap:wrap;opacity:0;animation:rise .6s ease .35s both"><span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">growth&ensp;=</span><span style="font:700 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#0E6E6E">supply</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">access</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">capacity</span><span style="margin-left:1em;font:700 clamp(16px,1.7vw,22px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">outcomes &ge; today</span></div></div>`},
+
 {heat:2,vol:61,phase:'Donor utilization',
 notes:'',
 html:`<div class="split" style="align-items:center">
@@ -981,6 +946,10 @@ html:`<div class="split" style="align-items:center">
   </svg>
  </div>
 </div>`},
+
+{heat:2,phase:'What I have done',
+notes:'Signpost. Spoken: supply is only half the equation. The other half is who ever gets to the list at all.',
+html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center"><div class="eyebrow">Moving one term</div><h2 style="max-width:20ch;color:#B07A00">Access</h2><p class="lede sub" style="max-width:46ch;margin-top:.6rem">More of the patients who need a transplant, actually reaching us.</p><div style="margin-top:2.2rem;display:flex;align-items:center;gap:.7em;flex-wrap:wrap;opacity:0;animation:rise .6s ease .35s both"><span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">growth&ensp;=</span><span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">supply</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:700 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#B07A00">access</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">&times;</span> <span style="font:600 clamp(20px,2.2vw,30px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">capacity</span><span style="margin-left:1em;font:700 clamp(16px,1.7vw,22px)/1 ui-monospace,Menlo,monospace;color:#C3C9C9">outcomes &ge; today</span></div></div>`},
 
 {heat:1,vol:61,phase:'Where we go',
 notes:'',
@@ -1188,37 +1157,6 @@ html:`<div style="position:absolute;inset:0;background:#000;display:flex;align-i
  <div style="position:absolute;top:22px;left:28px;font-family:'IBM Plex Mono',monospace;color:#8fb8c9;font-size:12px;letter-spacing:.24em;pointer-events:none">THE SAME OFFER &middot; CIRCA 2030</div>
 </div>`},
 
-{heat:3,vol:61,phase:'Wearables',
-notes:'',
-html:`<div class="split" style="align-items:center">
- <div>
-  <div class="eyebrow">The vision &#183; two to three years</div>
-  <h2>A wearable-informed allocation score</h2>
-  <p data-frag>A deep learning model trained on daily wearable data from patients with heart failure predicts unplanned healthcare events. We published that this year.</p>
-  <p class="sub" data-frag>The next step is to point it at the listing decision. Not how sick someone looked in clinic three months ago, but <strong>how they are actually living, measured continuously</strong>, feeding the urgency score that decides who gets the next offer.</p>
-  <p class="sub" data-frag>Status today is a snapshot taken by whoever was in the room. <em>It could be a trajectory.</em></p>
- </div>
- <div class="stagew">
-  <div class="clipping" data-frag>
-   <div class="clip-kicker">Nature Medicine &#183; March 2026 &#183; Vol 32 No 3</div>
-   <div class="clip-head">Monitoring heart failure</div>
-   <div class="clip-by">Gao, Moayedi et al. &#183; cover article</div>
-   <p class="clip-note">Cover illustration by Katie Yost, who also drew the shelves of hearts in this talk. Cover design by Marina Corral Spence.</p>
-  </div>
-  <div class="stagew" style="margin-top:1rem"><svg viewBox="0 0 460 160" aria-label="Continuous wearable signal feeding an allocation score">
-   <rect x="8" y="46" width="54" height="70" rx="12" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
-   <path d="M18,84 L28,84 L33,70 L39,98 L45,84 L54,84" fill="none" stroke="var(--red)" stroke-width="2" class="ecg"/>
-   <text x="35" y="140" text-anchor="middle" class="lab" style="font-size:11px;fill:var(--dim)">DAILY</text>
-   <path d="M74,82 C140,82 170,82 236,82" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".35"/>
-   ${Array.from({length:8},(_,i)=>`<circle r="4" fill="var(--cyan)" class="flow" style="--p:path('M74,82 C140,82 170,82 236,82');--fd:2.8s;--fdl:${(-i*0.35).toFixed(2)}s"/>`).join('')}
-   <rect x="244" y="40" width="120" height="82" rx="4" fill="var(--lift)" stroke="var(--gold)" stroke-width="2"/>
-   <text x="304" y="66" text-anchor="middle" class="lab" style="font-size:11px;fill:var(--dim)">URGENCY</text>
-   <text x="304" y="98" text-anchor="middle" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;fill:var(--gold)" data-count="87" data-dec="0" data-del="1400">0</text>
-   <text x="380" y="88" class="lab" style="font-size:12px;fill:var(--gold);opacity:0;animation:rise .7s ease 2.4s both">&#8594; OFFER</text>
-  </svg></div>
- </div>
-</div>`},
-
 {heat:3,vol:61,phase:'2028',
 notes:'',
 html:`<div class="split" style="align-items:center">
@@ -1267,26 +1205,34 @@ html:`<div class="eyebrow">The evidence</div>
  </div>
  <p class="mono sub" data-frag>Urschel et al, Lancet Child &amp; Adolescent Health, 2021 · PHTS registry analysis, 2020</p>`},
 
-{heat:2,phase:'Studies at a Glance',
-notes:'PROSPECT PGD - a NEW, prospective trial assessing biomarkers for PGD. Distinct from PGD AI (the retrospective ML model). Fill in design, n, sites, the biomarker panel, and the primary endpoint.',
+{heat:3,vol:61,phase:'Wearables',
+notes:'',
 html:`<div class="split" style="align-items:center">
  <div>
-  <div class="eyebrow">Study &middot; prospective &middot; biomarkers</div>
-  <h2>PROSPECT PGD</h2>
-  <p class="lede sub" style="max-width:32ch">A prospective trial assessing <em>biomarkers</em> for primary graft dysfunction.</p>
-  <p class="sub" style="max-width:54ch">Where PGD AI learned from history, PROSPECT collects forward in time, testing candidate biomarkers at the point of transplant to sharpen prediction and open a path to prevention.</p>
-  <div class="refline">PROSPECT PGD &middot; prospective, multicentre through the consortium &middot; protocol and biomarker panel in final design.</div>
+  <div class="eyebrow">The vision &#183; two to three years</div>
+  <h2>A wearable-informed allocation score</h2>
+  <p data-frag>A deep learning model trained on daily wearable data from patients with heart failure predicts unplanned healthcare events. We published that this year.</p>
+  <p class="sub" data-frag>The next step is to point it at the listing decision. Not how sick someone looked in clinic three months ago, but <strong>how they are actually living, measured continuously</strong>, feeding the urgency score that decides who gets the next offer.</p>
+  <p class="sub" data-frag>Status today is a snapshot taken by whoever was in the room. <em>It could be a trajectory.</em></p>
  </div>
  <div class="stagew">
-  <div class="flow2">
-   <span class="node" style="opacity:0;animation:rise .5s ease .2s both">Transplant</span><span class="arrow" style="opacity:0;animation:rise .4s ease .7s both">&rarr;</span>
-   <span class="node hot" style="opacity:0;animation:rise .5s ease 1s both">Serial biomarkers</span><span class="arrow" style="opacity:0;animation:rise .4s ease 1.5s both">&rarr;</span>
-   <span class="node" style="opacity:0;animation:rise .5s ease 1.8s both">Predict &amp; prevent</span>
+  <div class="clipping" data-frag>
+   <div class="clip-kicker">Nature Medicine &#183; March 2026 &#183; Vol 32 No 3</div>
+   <div class="clip-head">Monitoring heart failure</div>
+   <div class="clip-by">Gao, Moayedi et al. &#183; cover article</div>
+   <p class="clip-note">Cover illustration by Katie Yost, who also drew the shelves of hearts in this talk. Cover design by Marina Corral Spence.</p>
   </div>
-  <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem">
-   <span class="chip" style="opacity:0;animation:rise .4s ease 2.3s both">dd-cfDNA</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.5s both">hs-troponin</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.7s both">lactate</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.9s both">cytokines</span><span class="chip build" style="opacity:0;animation:rise .4s ease 3.2s both">+ to define</span>
-  </div>
-  <p class="mono sub" style="opacity:.65;margin-top:1rem;font-size:12px">Biomarker panel and endpoints to be finalized.</p>
+  <div class="stagew" style="margin-top:1rem"><svg viewBox="0 0 460 160" aria-label="Continuous wearable signal feeding an allocation score">
+   <rect x="8" y="46" width="54" height="70" rx="12" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
+   <path d="M18,84 L28,84 L33,70 L39,98 L45,84 L54,84" fill="none" stroke="var(--red)" stroke-width="2" class="ecg"/>
+   <text x="35" y="140" text-anchor="middle" class="lab" style="font-size:11px;fill:var(--dim)">DAILY</text>
+   <path d="M74,82 C140,82 170,82 236,82" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".35"/>
+   ${Array.from({length:8},(_,i)=>`<circle r="4" fill="var(--cyan)" class="flow" style="--p:path('M74,82 C140,82 170,82 236,82');--fd:2.8s;--fdl:${(-i*0.35).toFixed(2)}s"/>`).join('')}
+   <rect x="244" y="40" width="120" height="82" rx="4" fill="var(--lift)" stroke="var(--gold)" stroke-width="2"/>
+   <text x="304" y="66" text-anchor="middle" class="lab" style="font-size:11px;fill:var(--dim)">URGENCY</text>
+   <text x="304" y="98" text-anchor="middle" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;fill:var(--gold)" data-count="87" data-dec="0" data-del="1400">0</text>
+   <text x="380" y="88" class="lab" style="font-size:12px;fill:var(--gold);opacity:0;animation:rise .7s ease 2.4s both">&#8594; OFFER</text>
+  </svg></div>
  </div>
 </div>`},
 
@@ -1329,6 +1275,29 @@ html:`<div class="split" style="align-items:center">
  </div>
 </div>`},
 
+{heat:2,phase:'Studies at a Glance',
+notes:'PROSPECT PGD - a NEW, prospective trial assessing biomarkers for PGD. Distinct from PGD AI (the retrospective ML model). Fill in design, n, sites, the biomarker panel, and the primary endpoint.',
+html:`<div class="split" style="align-items:center">
+ <div>
+  <div class="eyebrow">Study &middot; prospective &middot; biomarkers</div>
+  <h2>PROSPECT PGD</h2>
+  <p class="lede sub" style="max-width:32ch">A prospective trial assessing <em>biomarkers</em> for primary graft dysfunction.</p>
+  <p class="sub" style="max-width:54ch">Where PGD AI learned from history, PROSPECT collects forward in time, testing candidate biomarkers at the point of transplant to sharpen prediction and open a path to prevention.</p>
+  <div class="refline">PROSPECT PGD &middot; prospective, multicentre through the consortium &middot; protocol and biomarker panel in final design.</div>
+ </div>
+ <div class="stagew">
+  <div class="flow2">
+   <span class="node" style="opacity:0;animation:rise .5s ease .2s both">Transplant</span><span class="arrow" style="opacity:0;animation:rise .4s ease .7s both">&rarr;</span>
+   <span class="node hot" style="opacity:0;animation:rise .5s ease 1s both">Serial biomarkers</span><span class="arrow" style="opacity:0;animation:rise .4s ease 1.5s both">&rarr;</span>
+   <span class="node" style="opacity:0;animation:rise .5s ease 1.8s both">Predict &amp; prevent</span>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem">
+   <span class="chip" style="opacity:0;animation:rise .4s ease 2.3s both">dd-cfDNA</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.5s both">hs-troponin</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.7s both">lactate</span><span class="chip" style="opacity:0;animation:rise .4s ease 2.9s both">cytokines</span><span class="chip build" style="opacity:0;animation:rise .4s ease 3.2s both">+ to define</span>
+  </div>
+  <p class="mono sub" style="opacity:.65;margin-top:1rem;font-size:12px">Biomarker panel and endpoints to be finalized.</p>
+ </div>
+</div>`},
+
 {heat:3,phase:'At Stanford',
 notes:'The alignment, drawn: each pillar of the vision wired to a Stanford partner already on campus. Agentic matching to AIMI/HAI/Data Science; wearable allocation to the Center for Digital Health and the Ashley lab; REBOOT coaching to Biodesign and industry next door; CONFIRM exact centre names and collaborators before presenting.',
 html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
@@ -1339,27 +1308,42 @@ html:`<div style="display:flex;flex-direction:column;height:100%;justify-content
 </div>`},
 
 {heat:3,phase:'At Stanford',
-notes:'Guideline bullet: how my impact would advance the Stanford program. Four concrete rows: outcomes (survival up, severe PGD down via dashboard, PGD AI, prevention protocols); evidence (the consortium and the trials run from Stanford); access (donor utilization up, list opened, outreach); people (train the next generation at the intersection of transplant, data, and AI). The people row is the mentorship commitment of the directorship.',
+notes:'The anti-Blade-Runner slide. Spoken: none of what you just watched is speculative. Every row on this screen exists today, in published work, in a running trial, or in routine practice. What is missing is not invention, it is assembly - and Stanford already holds the parts. Check the Stanford column against current faculty and centre names before the talk.',
 html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
- <div class="eyebrow">Advancing the Stanford program</div>
- <h2 style="max-width:18ch">What this does for Stanford</h2>
- <div style="margin-top:1.5rem;display:grid;gap:1.25rem;max-width:70ch">
-  <div data-frag style="border-left:5px solid #0E6E6E;padding-left:1.2rem"><div style="font:700 clamp(18px,1.9vw,24px)/1.35 -apple-system,system-ui;color:#0E1C1E">Outcomes climb as volume climbs.</div><div class="sub" style="margin-top:.15rem">The dashboard, PGD AI, and prevention protocols drive survival up and severe PGD down, while we grow.</div></div>
-  <div data-frag style="border-left:5px solid #B07A00;padding-left:1.2rem"><div style="font:700 clamp(18px,1.9vw,24px)/1.35 -apple-system,system-ui;color:#0E1C1E">The evidence runs from here.</div><div class="sub" style="margin-top:.15rem">The International PGD Consortium, PROTECT, PROSPECT, and REBOOT, led from Stanford.</div></div>
-  <div data-frag style="border-left:5px solid #8A3F73;padding-left:1.2rem"><div style="font:700 clamp(18px,1.9vw,24px)/1.35 -apple-system,system-ui;color:#0E1C1E">Access widens on both sides of the match.</div><div class="sub" style="margin-top:.15rem">More usable hearts, an opened list, and outreach to the patients who never reach us.</div></div>
-  <div data-frag style="border-left:5px solid var(--red);padding-left:1.2rem"><div style="font:700 clamp(18px,1.9vw,24px)/1.35 -apple-system,system-ui;color:#0E1C1E">And we train the people who scale it.</div><div class="sub" style="margin-top:.15rem">Fellows and faculty developed at the intersection of transplant, data, and AI, the next generation of this field.</div></div>
+ <div class="eyebrow">What you just watched</div>
+ <h2 style="max-width:22ch">None of this is science fiction</h2>
+ <div style="margin-top:1.7rem;max-width:none">
+  <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1fr;gap:1rem 1.6rem;padding-bottom:.5rem;border-bottom:1.5px solid rgba(0,0,0,.22)">
+   <div class="mono" style="font-size:clamp(10px,.95vw,12.5px);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)">In the film</div>
+   <div class="mono" style="font-size:clamp(10px,.95vw,12.5px);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)">Already real</div>
+   <div class="mono" style="font-size:clamp(10px,.95vw,12.5px);letter-spacing:.14em;text-transform:uppercase;color:#B07A00">Parts already at Stanford</div>
+  </div>
+  <div data-frag style="display:grid;grid-template-columns:1.05fr 1.5fr 1fr;gap:1rem 1.6rem;padding:.95rem 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:baseline">
+   <div style="font:700 clamp(16px,1.7vw,22px)/1.3 -apple-system,system-ui;color:#0E6E6E">Machines read the donor study</div>
+   <div class="sub" style="margin:0">Deep learning already interprets echocardiograms at expert level, in peer-reviewed work.</div>
+   <div class="mono" style="font-size:clamp(11px,1.05vw,14px);color:#0E1C1E">Imaging AI &#183; AIMI</div>
+  </div>
+  <div data-frag style="display:grid;grid-template-columns:1.05fr 1.5fr 1fr;gap:1rem 1.6rem;padding:.95rem 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:baseline">
+   <div style="font:700 clamp(16px,1.7vw,22px)/1.3 -apple-system,system-ui;color:#0E6E6E">Size matched by volume, not weight</div>
+   <div class="sub" style="margin:0">Total cardiac volume from the donor CT is measurable now, on scans we are already sent.</div>
+   <div class="mono" style="font-size:clamp(11px,1.05vw,14px);color:#0E1C1E">3D imaging core</div>
+  </div>
+  <div data-frag style="display:grid;grid-template-columns:1.05fr 1.5fr 1fr;gap:1rem 1.6rem;padding:.95rem 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:baseline">
+   <div style="font:700 clamp(16px,1.7vw,22px)/1.3 -apple-system,system-ui;color:#B33326">Graft dysfunction predicted first</div>
+   <div class="sub" style="margin:0">Our model is built and externally validated. PROTECT is randomizing patients today.</div>
+   <div class="mono" style="font-size:clamp(11px,1.05vw,14px);color:#0E1C1E">A trial site, day one</div>
+  </div>
+  <div data-frag style="display:grid;grid-template-columns:1.05fr 1.5fr 1fr;gap:1rem 1.6rem;padding:.95rem 0;border-bottom:1px solid rgba(0,0,0,.1);align-items:baseline">
+   <div style="font:700 clamp(16px,1.7vw,22px)/1.3 -apple-system,system-ui;color:#8A3F73">Listing informed by how patients live</div>
+   <div class="sub" style="margin:0">Wearable data predicting unplanned events is published, this year, by our group.</div>
+   <div class="mono" style="font-size:clamp(11px,1.05vw,14px);color:#0E1C1E">Center for Digital Health</div>
+  </div>
  </div>
-</div>`},
-
-{heat:3,phase:'My vision',
-notes:'CLOSING FILM (42 s, narrated). Click play. The future of heart transplant in five scenes - wearables, machine-read donors, perfused transport, predicted PGD, access regardless of geography. Ends silent on the growth formula. Pick up with Three Things when it fades.',
-html:`<div style="position:absolute;inset:0;background:#000;display:flex;align-items:center;justify-content:center">
- <video class="filmclip" controls preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="future-of-transplant.webm" type="video/webm"></video>
- <div style="position:absolute;top:22px;left:28px;font-family:'IBM Plex Mono',monospace;color:#8fb8c9;font-size:12px;letter-spacing:.24em;pointer-events:none">THE FUTURE OF HEART TRANSPLANT</div>
+ <div data-frag style="margin-top:1.9rem;font:800 clamp(20px,2.3vw,30px)/1.25 -apple-system,system-ui;letter-spacing:-.01em;color:#0E1C1E">This is not invention. It is <span style="color:#B07A00">assembly</span>.</div>
 </div>`},
 
 {heat:3,phase:'Conclusions',
-notes:'Three summary statements, no quote. 1 Volume is not vanity: it is the size of the risk you can afford to take, and every added transplant is a life. 2 See, act, scale: a program you can see is one you can safely grow. 3 Transplant is a team sport: give every discipline a signal it can own.',
+notes:'Three summary statements, then the Stanford landing: this belongs where transplant began - Shumway, January 6 1968, the first adult heart transplant in the United States. Say the last line slowly and stop. 1 Volume is not vanity: it is the size of the risk you can afford to take, and every added transplant is a life. 2 See, act, scale: a program you can see is one you can safely grow. 3 Transplant is a team sport: give every discipline a signal it can own.',
 html:`<div style="display:flex;flex-direction:column;height:100%;justify-content:center">
  <div class="eyebrow">Conclusions</div>
  <h2>Three things</h2>
@@ -1368,6 +1352,17 @@ html:`<div style="display:flex;flex-direction:column;height:100%;justify-content
   <div data-frag style="border-left:5px solid #B07A00;padding-left:1.2rem"><div style="font:700 clamp(19px,2vw,26px)/1.35 -apple-system,system-ui;color:#0E1C1E">See, act, scale.</div><div class="sub" style="margin-top:.2rem">A program you can see is one you can safely grow.</div></div>
   <div data-frag style="border-left:5px solid #8A3F73;padding-left:1.2rem"><div style="font:700 clamp(19px,2vw,26px)/1.35 -apple-system,system-ui;color:#0E1C1E">Transplant is a team sport.</div><div class="sub" style="margin-top:.2rem">The leader&rsquo;s job is to give every discipline a signal it can own.</div></div>
  </div>
+ <div data-frag style="margin-top:2.1rem;border-top:1.5px solid rgba(0,0,0,.18);padding-top:1.3rem;max-width:66ch">
+  <div style="font:800 clamp(22px,2.5vw,34px)/1.22 -apple-system,system-ui;letter-spacing:-.015em;color:#0E1C1E">And we should be doing it <span style="color:#B07A00">where transplant began</span>.</div>
+  <div class="mono" style="margin-top:.7rem;font-size:clamp(12px,1.15vw,15px);line-height:1.75;color:var(--dim)">The first adult heart transplant in the United States &#183; Stanford &#183; January 1968<br>Fifty-eight years on, this is the place to build what comes next.</div>
+ </div>
+</div>`},
+
+{heat:3,phase:'My vision',
+notes:'CLOSING FILM (42 s, narrated). Click play. The future of heart transplant in five scenes - wearables, machine-read donors, perfused transport, predicted PGD, access regardless of geography. Ends silent on the growth formula. Pick up with Three Things when it fades.',
+html:`<div style="position:absolute;inset:0;background:#000;display:flex;align-items:center;justify-content:center">
+ <video class="filmclip" controls preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="future-of-transplant.webm" type="video/webm"></video>
+ <div style="position:absolute;top:22px;left:28px;font-family:'IBM Plex Mono',monospace;color:#8fb8c9;font-size:12px;letter-spacing:.24em;pointer-events:none">THE FUTURE OF HEART TRANSPLANT</div>
 </div>`},
 
 {heat:3,phase:'Thank you',
@@ -1473,6 +1468,121 @@ const SECT_OF=(()=>{
 const steps=()=>SLIDES.reduce((a,s)=>a+s.frags.length+1,0);
 const done=()=>{let n=0;for(let i=0;i<si;i++)n+=SLIDES[i].frags.length+1;return n+fi+1;};
 
+
+/* ===== presenter / script (direct window control: works on file:// too) ===== */
+const SCRIPT = {"1": {"t": "Title", "p": ["Thank you, it&#x27;s a privilege to be here. And I&#x27;ll admit, it feels good to be back on old stomping grounds.", "<strong>We&#x27;re going to talk about how we re-imagine transplant care.</strong> But before we start, I want you to see how we do it today."], "c": "Warm, unhurried. Don't promise timings. Last line cues the film, then click play."}, "2": {"t": "COLD OPEN FILM · 42 s", "p": ["<strong>This is real. This is my inbox.</strong>", "<strong>It comes as an email. Sometimes a text.</strong>", "<strong>Attachment. After attachment.</strong>", "<strong>Often for a patient I&#x27;ve never met, and with not much backup.</strong>", "<strong>All of this, for what may be the most important decision we make: whether to accept a certain heart, for a specific recipient.</strong>"], "c": "Talk over the film. Leave gaps. The last line lands as it fades to black."}, "3": {"t": "Agenda", "p": ["Three parts. <strong>Who I am. What I&#x27;ve built. And where we&#x27;re going.</strong>"], "c": ""}, "4": {"t": "Part 01 · Intro", "p": ["<strong>The best way to predict the future is to invent it.</strong> That line has followed me around for twenty years, and it&#x27;s the honest through-line of everything I&#x27;m about to show you."], "c": ""}, "5": {"t": "The patient · technology · team", "p": ["<strong>I&#x27;ve lived in a lot of places</strong>, Iran, France, Canada, and the US. <strong>I grew up with three brothers.</strong> You learn early how to land in a room you&#x27;ve never been in, with people you don&#x27;t know yet, and get to work.", "Three things I keep coming back to. <strong>The patient at the centre. Technology as leverage. And a team that puts innovation to work.</strong>", "<strong>That last one I learned here.</strong> Stanford is where I saw how much innovation there is, and <strong>how easily it goes to waste if nobody&#x27;s job is to apply it.</strong>"], "c": "Slowest slide in the talk. This is the one they'll remember you by."}, "6": {"t": "Make the program visible. Then act on it", "p": ["<strong>If you&#x27;re going to innovate, you have to be able to track it.</strong> Otherwise you never know whether it worked, or who it quietly cost.", "<strong>And that&#x27;s the same discipline growth needs.</strong> Supply, access, capacity, you can&#x27;t move any of them if you can&#x27;t see them either.", "<strong>So it&#x27;s one method doing both jobs: make the program visible, then act on it.</strong>", "Which is what this is. <strong>Growth is supply, times access, times capacity, and outcomes are the constraint, not the trade.</strong>"], "c": "This is the hinge of the whole talk. Don't rush it."}, "7": {"t": "Part 02 · The evidence", "p": [], "c": ""}, "8": {"t": "Sharon Hunt", "p": ["<strong>Sharon Hunt built long-term transplant medicine, here.</strong> The surgeons had survivors they didn&#x27;t want to manage, so they looked to cardiology. <strong>She took the problem nobody wanted.</strong> That&#x27;s the job, honestly."], "c": ""}, "9": {"t": "Capitalizing on a huge registry", "p": ["<strong>I co-created the Stanford heart transplant registry</strong> with Erik Henricksen, six decades of structured outcomes in one place, back to the 1960s. <strong>It&#x27;s still producing manuscripts today.</strong>", "<strong>That project stayed with me.</strong> It taught me the rule I brought to Toronto: <strong>the registry comes first. Everything else gets built on top of it.</strong>"], "c": "Paul: make it about the project, not the citation."}, "10": {"t": "A program you can actually see", "p": ["<strong>I took that idea from Stanford and built it live at UHN.</strong>", "<strong>The difference is real time.</strong> Not a report you read at the annual review, eleven months after the thing you&#x27;d want to change. <strong>Problems surface in weeks, while we can still do something about them.</strong> And everyone sees the same numbers, so it&#x27;s not my opinion against anyone&#x27;s.", "<strong>See it. Act on it. Watch it move.</strong> That loop is the whole method, the rest of this section is examples of it."], "c": "Paul: credit the Stanford origin, then land the real-time impact."}, "11": {"t": "2026, year to date", "p": ["<strong>This is where we are right now.</strong> Anyone on the team can open this today."], "c": ""}, "12": {"t": "Capacity", "p": ["<strong>The first term I went after was capacity</strong>, because complications are what stop you growing.", "<strong>Everything from here to PROTECT is capacity and outcomes.</strong>"], "c": "Signpost. Point at the term. Ten seconds, no more."}, "13": {"t": "Each signal drove a concrete pivot", "p": ["<strong>Every number on that dashboard changed something we actually do.</strong> Let me take three."], "c": ""}, "14": {"t": "Rejection & infection → selective induction", "p": ["<strong>We were giving thymoglobulin to everyone, two milligrams per kilo.</strong> The data showed us we were treating a risk that most of our patients didn&#x27;t have.", "<strong>Now sixteen of forty get no induction at all.</strong> <strong>Rejection went from twenty-five percent to zero</strong>, and infections came down with it."], "c": ""}, "15": {"t": "Readmissions → the RAPID Transplant Clinic", "p": ["<strong>One in five patients was coming back within thirty days.</strong> Not because they were failing, because there was nowhere to send them.", "<strong>So our NPs built a rapid clinic.</strong> Same week, no emergency department, <strong>no admission.</strong>"], "c": ""}, "16": {"t": "The operating room is a black box", "p": ["Here&#x27;s what still bothers me. <strong>Everything upstream and downstream of the OR we measure. The operating room itself, we don&#x27;t.</strong>", "<strong>Variation between surgeons, within one centre, and between centres, is almost entirely unmeasured.</strong> <strong>It may be the richest untapped data source we have.</strong>", "<strong>Our perfusionists led the first change into that room:</strong> gradual rewarming, continuous oxygen extraction monitoring. <strong>And unmeasured means unmodellable, no data, no model.</strong>"], "c": "Paul: name the surgeon-variation point out loud."}, "17": {"t": "One signal at a time, it became a research program", "p": ["<strong>Some of those we could fix ourselves. The OR we couldn&#x27;t, and neither could anyone else alone.</strong>", "<strong>The moment a question gets rare enough, one program doesn&#x27;t have the numbers to answer it. You need a bigger denominator.</strong>", "<strong>So each of these started as a line on our dashboard, and turned into a study, a consortium, or a trial.</strong>"], "c": "Bigger denominator calls back to the tracking line on slide 6."}, "18": {"t": "Understand the worst outcome, and you can be braver", "p": ["<strong>If you understand the worst thing that can happen, you can be braver about everything else.</strong> That&#x27;s the bridge between the dashboard and the research."], "c": ""}, "19": {"t": "The International Consortium on PGD", "p": ["<strong>The worst early complication is primary graft dysfunction</strong>, the heart doesn&#x27;t work when you come off bypass. <strong>About thirteen percent of our transplants. Forty percent in DCD.</strong>", "<em class=\"red\">Harms and cost: mortality with severe PGD, ICU days, dollars per case</em>", "<strong>No single centre has enough of it to study properly. So we built the consortium</strong>, sixteen centres, six countries, four thousand patients. <strong>Founded at Stanford, co-led with Kiran Khush.</strong>"], "c": "First time you say PGD. Define it once, in one sentence. Before this, say complications."}, "20": {"t": "The first machine-learning model for severe PGD", "p": ["<strong>We built the first machine-learning model for severe PGD.</strong> <strong>AUC of 0.70, against 0.52 for the existing score.</strong>", "<strong>And it isn&#x27;t good enough. That bothers me.</strong> I&#x27;ve perseverated on this problem for years, it&#x27;s personal at this point.", "<em class=\"ver\">Here&#x27;s the honest context: a meta-analysis found twelve models built to predict outcomes after transplant, and nearly all performed poorly. The one that really worked was a lung model built on ex-vivo perfusion data.</em>", "<strong>The ceiling is the data, not the model.</strong> <strong>Which is exactly why I build the data layer first.</strong>"], "c": "Paul: say plainly that it bothers you. Then turn it into the argument."}, "21": {"t": "PROTECT PGD", "p": ["<strong>A prediction you can&#x27;t act on is just a warning label.</strong>", "<strong>So the real question was never whether we can predict severe PGD. It&#x27;s whether we can prevent it.</strong>", "<strong>And that question has exactly one honest answer: randomize.</strong> We have all been fooled by before-and-after data. I have.", "<strong>That&#x27;s PROTECT. Randomized, multicentre</strong>, peer-reviewed CIHR funding, with Traferox and CareDx. <strong>Six sites, five of fifty randomized so far.</strong>"], "c": "The first line is the transition. Say it, then pause."}, "22": {"t": "Supply", "p": ["<strong>With complications coming down, we could go after supply</strong>, the hearts we were already being offered, and turning down."], "c": "Signpost. Ten seconds."}, "23": {"t": "We look at four hearts for every one we take", "p": ["<strong>Even before the procurement, the way we accept hearts is the lever.</strong> <strong>We look at four to take one.</strong>", "<em class=\"ver\">And most hearts are placed within a handful of offers, but there&#x27;s a long tail. Hundreds of donors need fifty offers or more, and some of them run out of time.</em>", "<em class=\"ver\">We may not be able to predict who&#x27;ll say yes. We can predict who&#x27;ll say no.</em> <strong>For a hard-to-place heart, that means offering it first to the centres most likely to take it.</strong>"], "c": "Paul's transition line opens this."}, "24": {"t": "Moving beyond the perfect donor", "p": ["<strong>We started asking why we said no, and auditing every answer.</strong> Decline rationales, weekly waitlist review, donor report cards.", "<strong>Report cards were never a hit. Programatic improvements were.</strong>", "<strong>Utilization went from 12.4, to 18.5, to about 30 percent today</strong>, and missed hearts more than halved. <strong>Every discipline had a role in that.</strong>"], "c": "Paul's report-card line, verbatim."}, "25": {"t": "Access", "p": ["<strong>Supply is only half of it.</strong> <strong>The other half is who ever reaches the list at all.</strong>"], "c": "Signpost. Ten seconds."}, "26": {"t": "If they cannot come to us, we go to them", "p": ["<strong>Referral should never be an accident of geography, or of race.</strong>", "<em class=\"red\">Your Indigenous disparity data: referral rate, distance, share of the waitlist</em>", "<strong>So we go to them.</strong> These are the places we&#x27;ve started going, and these are patients we&#x27;re assessing, shared with their consent."], "c": "Paul: geography AND race. This is the disparity beat."}, "27": {"t": "We didn't just work the list. We grew it.", "p": ["<strong>We went from fifteen people on our list to forty.</strong> <strong>Not by working the list harder, by going to the remote centres.</strong>"], "c": ""}, "28": {"t": "Merle: across a positive crossmatch", "p": ["<strong>Merle waited because she was sensitized</strong>, not because she wasn&#x27;t sick enough.", "<strong>With our HLA immunologists, we built a protocol and transplanted her across a positive crossmatch.</strong> That is not a one-person decision; it&#x27;s pharmacy, immunology, surgery, nursing, all of us.", "<em class=\"ver\">And a machine-learning model can already predict physical crossmatch compatibility with high accuracy.</em> <strong>What we did for Merle by hand, a model could do for the whole list.</strong>"], "c": "Credit the immunologists out loud."}, "29": {"t": "Every criterion we relaxed was a bet", "p": ["<strong>Every criterion we relaxed was a bet, and we tracked every single one.</strong>", "<strong>That&#x27;s the tie back: you can only be brave if you can see.</strong>"], "c": "End of Act 2. Pause here before you turn."}, "30": {"t": "Part 03 · Where we are going", "p": ["<strong>Where we&#x27;re going is a precision-guided approach</strong>, to how we accept hearts, and to who we give them to."], "c": ""}, "31": {"t": "Euan Ashley", "p": [], "c": ""}, "32": {"t": "Three pillars", "p": ["<strong>Three pillars. The match. The signal. The journey.</strong>"], "c": ""}, "33": {"t": "The risk score should already be on the screen", "p": ["<strong>When the offer arrives, the risk score should already be on the screen.</strong> Echo, echo report, chest CT, donor chart, all read before I open the email.", "<em class=\"ver\">Language models already write discharge summaries that blinded reviewers judged more concise and more coherent than ours, with no more harmful errors.</em> <strong>Reading forty-one pages and surfacing what matters is not the hard part anymore.</strong>"], "c": ""}, "34": {"t": "THE 2030 OFFER FILM · 30 s", "p": ["<strong>Same offer. Different system.</strong>", "<strong>Read in seconds. Matched by volume, not weight. Eight minutes, not four hours.</strong>"], "c": "Two lines in, one after. Let it run."}, "37": {"t": "A wearable-informed allocation score", "p": ["<strong>Status today is a snapshot, taken by whoever happened to be in the room that afternoon.</strong> <strong>It could be a trajectory.</strong>", "We published the model this year. <strong>The next step is pointing it at the listing decision.</strong>"], "c": ""}, "35": {"t": "Open the list", "p": ["<strong>Sensitized recipients listed, not deferred. ABO-incompatible listing in adults.</strong>", "<strong>Each ring is a group of patients we currently tell to wait, or tell nothing at all.</strong>"], "c": ""}, "36": {"t": "Matched, and no difference", "p": ["<strong>The paediatric evidence is in</strong>, 2,206 children, propensity matched, <strong>no difference in graft survival.</strong>", "<strong>We should be one of the programmes that finds out properly in adults.</strong>"], "c": ""}, "40": {"t": "PROSPECT PGD", "p": ["<strong>PROSPECT is the next question after PROTECT</strong>, prospective, biomarker-driven."], "c": ""}, "38": {"t": "REBOOT 1.0", "p": ["<strong>This one started here, with wearables.</strong> It&#x27;s where the coaching idea came from."], "c": ""}, "39": {"t": "REBOOT 2.0", "p": ["<strong>Can wearables and coaching reduce readmissions?</strong> Four hundred patients, randomized, heart, kidney and liver.", "<strong>And then the same data trains models for rejection, infection, and graft dysfunction.</strong>"], "c": ""}, "41": {"t": "An ecosystem aligned with elevating transplant", "p": ["<strong>This may seem far off. We are this close.</strong>", "<strong>Every part of it already exists here</strong>, AIMI, HAI, the Center for Digital Health, Biodesign. <strong>This is where that progress should be made. And where it will be.</strong>"], "c": "Paul: say the 'this close' line with energy."}, "44": {"t": "THE FUTURE FILM · 42 s", "p": ["<strong>This is the whole thing, put together.</strong>"], "c": "One line in, then let it play."}, "42": {"t": "None of this is science fiction", "p": ["<strong>Not one row on this slide needs to be invented.</strong>", "<em class=\"ver\">Deep learning has measured ejection fraction since 2020, to within four points, the same spread you get between two human readers. On donor echoes specifically, it matched the local cardiologist for low EF and beat them on hypertrophy. An AI-ECG model has flagged people with no heart failure at baseline who went on to four-to-twenty-four-fold risk. And in lung, a portable chest X-ray already sizes the organ to within two and a half percent.</em>", "<strong>The PGD model is built. The wearable model is published.</strong>", "<strong>This is not invention. It&#x27;s assembly, and Stanford is where it should be built.</strong>"], "c": "Verify each citation and credit the group before you say it."}, "42b": {"t": "When, where, and how", "p": ["<strong>When? Now</strong>, for the tools that are already published and validated. The rest need real development and tailoring to transplant.", "<strong>Where? Pilot at a few centres and OPOs, then scale it the way we scale anything. A randomized trial.</strong>", "<strong>How? Decision aids. Never replacements.</strong> Always read in the context of clinical judgment. <strong>Held to that, the potential for harm is low</strong>, and we measure whether they&#x27;re worth it, like we measure everything else.", "<strong>AI is not an oracle. It&#x27;s a very well-read colleague who never gets tired.</strong>"], "c": "Proposed new slide. This is your answer to 'how would you actually run it?'"}, "43": {"t": "Three things", "p": ["<strong>Volume is not vanity.</strong> It&#x27;s the size of the risk you can afford to take, and every added transplant is a life.", "<strong>See, act, scale.</strong> A program you can see is one you can safely grow.", "<strong>Transplant is a team sport.</strong> The leader&#x27;s job is to give every discipline a signal it can own.", "<strong>And we should be doing it where transplant began.</strong> The first adult heart transplant in the United States happened here, in 1968. <strong>Fifty-eight years on, this is the place to build what comes next.</strong>"], "c": "Last line slowly. Then stop talking."}, "45": {"t": "Questions?", "p": ["Thank you. <strong>I&#x27;d love to take your questions.</strong>"], "c": ""}};
+let _pw = null;
+function scriptHTML(n){
+  const d = SCRIPT[String(n)];
+  if(!d) return '<p class="pn-empty">No script for this slide.</p>';
+  let h = '';
+  d.p.forEach(function(p){ h += '<p class="pn-p">'+p+'</p>'; });
+  if(d.c) h += '<p class="pn-cue">'+d.c+'</p>';
+  return h || '<p class="pn-empty">(nothing scripted here)</p>';
+}
+let _np = document.getElementById('notePane');
+if(!_np){
+  _np = document.createElement('div'); _np.id='notePane';
+  _np.innerHTML = '<div class="pn-inner"></div>';
+  document.body.appendChild(_np);
+  const st = document.createElement('style');
+  st.textContent = '#notePane{position:fixed;left:0;right:0;bottom:0;max-height:46vh;overflow:auto;'+
+   'background:rgba(14,28,30,.965);color:#EDE9E0;padding:20px 30px 24px;z-index:9999;display:none;'+
+   'box-shadow:0 -18px 50px rgba(0,0,0,.35)}'+
+   '#notePane.on{display:block}'+
+   '.pn-p{font:400 20px/1.55 -apple-system,system-ui,sans-serif;color:#AEB9B8;margin:0 0 10px;max-width:70ch}'+
+   '.pn-p strong{color:#fff;font-weight:800}'+
+   '.pn-p em.red{color:#FF9A8A;font-style:normal;font-weight:700}'+
+   '.pn-p em.ver{color:#6FE3D6;font-style:normal}'+
+   '.pn-cue{font:italic 500 15px/1.5 -apple-system,system-ui,sans-serif;color:#7E8C8C;margin-top:12px}'+
+   '.pn-empty{font:400 17px/1.5 -apple-system,system-ui,sans-serif;color:#7E8C8C}';
+  document.head.appendChild(st);
+}
+function paintNotes(){
+  const inner = _np.querySelector('.pn-inner');
+  if(inner) inner.innerHTML = scriptHTML(si+1);
+  if(_pw && !_pw.closed){
+    try{
+      const d = _pw.document;
+      const put = function(id, html){ const el = d.getElementById(id); if(el) el.innerHTML = html; };
+      put('pos', (si+1)+' / '+SLIDES.length);
+      put('ttl', (SCRIPT[String(si+1)] && SCRIPT[String(si+1)].t) || '');
+      put('body', scriptHTML(si+1));
+      put('nx', (SCRIPT[String(si+2)] && SCRIPT[String(si+2)].t) || ', ');
+      _pw.scrollTo(0,0);
+    }catch(e){}
+  }
+}
+window.__deckNext = function(){ next(); };
+window.__deckPrev = function(){ prev(); };
+function openPresenter(){
+  if(_pw && !_pw.closed){ _pw.focus(); paintNotes(); return; }
+  const w = window.open('', 'ymPresenter', 'width=1100,height=820');
+  if(!w){ _np.classList.add('on'); paintNotes();
+    alert('Your browser blocked the presenter window.\n\nAllow pop-ups for this page, then click Presenter again.\nFor now the script is showing at the bottom of this window (click Notes to hide).');
+    return; }
+  _pw = w;
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Presenter</title><style>
+  :root{--bg:#0E1C1E;--fg:#EDE9E0;--dim:#8B9A9A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;padding:26px 32px 96px}
+  .top{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:14px;margin-bottom:20px}
+  .pos{font:800 26px/1 ui-monospace,Menlo,monospace}
+  .ttl{font-size:17px;color:var(--dim)}
+  .clock{margin-left:auto;font:700 30px/1 ui-monospace,Menlo,monospace}
+  .clock.warn{color:#E8B04B}.clock.over{color:#FF9A8A}
+  .pn-p{font:400 clamp(20px,2.3vw,30px)/1.5 inherit;color:#AEB9B8;margin:0 0 16px;max-width:64ch}
+  .pn-p strong{color:#fff;font-weight:800}
+  .pn-p em.red{color:#FF9A8A;font-style:normal;font-weight:700}
+  .pn-p em.ver{color:#6FE3D6;font-style:normal}
+  .pn-cue{font:italic 500 clamp(14px,1.5vw,18px)/1.5 inherit;color:#7E8C8C;margin-top:18px;border-left:3px solid #3A4A4A;padding-left:14px}
+  .pn-empty{color:var(--dim)}
+  .next{position:fixed;left:0;right:0;bottom:0;background:#0A1516;border-top:1px solid rgba(255,255,255,.12);padding:14px 32px;display:flex;align-items:center;gap:16px}
+  .next b{font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;color:var(--dim)}
+  .next span{font-size:16px;color:#C9D3D2}
+  .btns{margin-left:auto;display:flex;gap:8px}
+  button{font:700 14px/1 inherit;background:transparent;color:var(--fg);border:1.5px solid #4A5A5A;border-radius:999px;padding:10px 16px;cursor:pointer}
+  button:hover{background:rgba(255,255,255,.08)}
+  </style></head><body>
+  <div class="top"><div class="pos" id="pos">&hellip;</div><div class="ttl" id="ttl"></div><div class="clock" id="clock">00:00</div></div>
+  <div id="body"><p class="pn-empty">Connecting to the deck&hellip;</p></div>
+  <div class="next"><b>NEXT</b><span id="nx"></span>
+    <div class="btns"><button id="rst">Reset timer</button><button id="pv">&larr;</button><button id="nb">&rarr;</button></div></div>
+  <script>
+  function go(k){ try{ k==='n' ? window.opener.__deckNext() : window.opener.__deckPrev(); }catch(e){} }
+  document.getElementById('nb').onclick=function(){go('n')};
+  document.getElementById('pv').onclick=function(){go('p')};
+  var t0=Date.now();
+  setInterval(function(){ var s=Math.floor((Date.now()-t0)/1000); var c=document.getElementById('clock');
+    c.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+    c.className='clock'+(s>2400?' over':(s>2100?' warn':'')); },1000);
+  document.getElementById('rst').onclick=function(){t0=Date.now()};
+  addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown',' ','PageDown'].indexOf(e.key)>-1){e.preventDefault();go('n');}
+    if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();go('p');}});
+  <\/script></body></html>`);
+  w.document.close();
+  setTimeout(paintNotes, 60);
+  setTimeout(paintNotes, 400);
+}
+addEventListener('keydown', function(e){
+  const k=e.key.toLowerCase();
+  if(k==='n'){ _np.classList.toggle('on'); paintNotes(); }
+  if(k==='p'){ openPresenter(); }
+}, true);
+(function(){
+  const rail=document.getElementById('rail'); if(!rail) return;
+  const mk=function(label,fn){ const b=document.createElement('button'); b.textContent=label;
+    b.style.cssText='font:600 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;'+
+      'text-transform:uppercase;background:transparent;border:1px solid currentColor;color:inherit;'+
+      'opacity:.42;border-radius:3px;padding:4px 7px;margin-left:10px;cursor:pointer';
+    b.onmouseenter=function(){b.style.opacity='1'}; b.onmouseleave=function(){b.style.opacity='.42'};
+    b.onclick=function(ev){ev.stopPropagation();fn();}; return b; };
+  rail.appendChild(mk('Presenter', openPresenter));
+  rail.appendChild(mk('Notes', function(){ _np.classList.toggle('on'); paintNotes(); }));
+})();
+console.log('%cDeck build 2026-08-15c - presenter view via direct window control','color:#0E6E6E;font-weight:700');
+
 function render(){
   if(si!==last){stopAudio();killVideo();document.querySelectorAll('video.filmclip').forEach(v=>{try{v.pause()}catch(e){}});replay(SLIDES[si]);last=si;}
   SLIDES.forEach((s,i)=>s.el.classList.toggle('live',i===si));
@@ -1487,6 +1597,7 @@ function render(){
   railFill.style.width=(done()/steps()*100)+'%';
   if(si>0)hint.classList.add('hide');
   location.hash=si+1;
+  try{paintNotes()}catch(e){}
 }
 function next(){const c=SLIDES[si];if(fi<c.frags.length)fi++;else if(si<SLIDES.length-1){si++;fi=0}else return;render();}
 function prev(){if(fi>0)fi--;else if(si>0){si--;render();fi=SLIDES[si].frags.length}else return;render();}
