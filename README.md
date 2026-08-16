@@ -16,17 +16,17 @@ beside it in the same folder.
 Put the deck window on the projector and the presenter window on the laptop.
 Allow pop-ups for the page the first time.
 
-## Structure — 45 slides
+## Structure — 44 slides
 
 - **01 Intro** (1–6) — cold-open film, credo, and the growth equation
 - **02 The evidence** (7–29) — signposted by which term of the equation it moves:
   - *Capacity* (12–21) the dashboard pivots, the PGD consortium, PGD AI, PROTECT
   - *Supply* (22–24) donor utilization and Donor QI
   - *Access* (25–28) outreach, growing the list, sensitization
-- **03 Where we are going** (30–42) — the three pillars: the match (33–36),
-  the signal (37), the journey (38–39); then PROSPECT, the Stanford ecosystem,
-  and "None of this is science fiction"
-- **Close** (43–45) — three things, the future film as a coda, questions
+- **03 Where we are going** (30–41) — the three pillars: the match (33–36),
+  the signal (37), the journey (38–39); then the Stanford ecosystem and
+  "None of this is science fiction"
+- **Close** (42–44) — three things, the future film as a coda, questions
 
 ## Films
 
@@ -34,7 +34,7 @@ Allow pop-ups for the page the first time.
 |---|---|---|
 | `cold-open.webm` | 42 s | slide 2 — how a donor offer arrives today |
 | `offer-2030.webm` | 30 s | slide 34 — the same offer, machine-read and matched |
-| `future-of-transplant.webm` | 42 s | slide 44 — closing coda |
+| `future-of-transplant.webm` | 42 s | slide 43 — closing coda |
 
 The cold open contains a real screen recording; all identifiers are blurred
 with a scroll-tracked mask. The donor chart shown in the portal scene is
@@ -45,5 +45,5 @@ fabricated.
 - PGD harms and cost figures (slide 19)
 - Indigenous disparity data (slide 26)
 - Citations borrowed from a colleague's AI talk, marked teal in the script
-  (slides 20, 23, 28, 33, 42) — verify and credit the originating group
-- Stanford centre and faculty names on slides 41–42
+  (slides 20, 23, 28, 33, 41) — verify and credit the originating group
+- Stanford centre and faculty names on slides 40–41
