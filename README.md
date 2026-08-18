@@ -8,42 +8,35 @@ beside it in the same folder.
 | key / button | what it does |
 |---|---|
 | `←` `→` | navigate (reveals fragments first, then changes slide) |
-| **Presenter** (bottom bar) or `P` | opens a second window with the full speaker script for the current slide, the next slide's title, and a timer that turns amber at 35 min and red at 40 |
-| **Notes** (bottom bar) or `N` | shows the same script inside the deck — rehearsal only, do not use live |
+| **Presenter** (bottom bar) or `P` | second window with the full script, next slide, and a timer |
+| **Notes** (bottom bar) or `N` | the same script inside the deck — rehearsal only |
 | `R` | replay the current slide's animations |
 | click / space on a film slide | play or pause the film |
 
-Put the deck window on the projector and the presenter window on the laptop.
-Allow pop-ups for the page the first time.
+## Structure — 43 slides
 
-## Structure — 44 slides
-
-- **01 Intro** (1–6) — cold-open film, credo, and the growth equation
-- **02 The evidence** (7–29) — signposted by which term of the equation it moves:
-  - *Capacity* (12–21) the dashboard pivots, the PGD consortium, PGD AI, PROTECT
-  - *Supply* (22–24) donor utilization and Donor QI
-  - *Access* (25–28) outreach, growing the list, sensitization
-- **03 Where we are going** (30–41) — the three pillars: the match (33–36),
-  the signal (37), the journey (38–39); then the Stanford ecosystem and
-  "None of this is science fiction"
-- **Close** (42–44) — three things, the future film as a coda, questions
+- **01 Intro** (1–6) — cold-open film, three parts, the Jobs quote, the journey, the growth formula
+- **02 Visibility** (7–28) — the registry, the dashboard, then the three terms:
+  - *Capacity* (13–20) the pivots, PGD, the consortium, PROTECT
+  - *Supply* (21–23) the denominator, 250 offers, Donor QI
+  - *Access* (24–28) outreach, sensitization, group O, the criteria we relaxed
+- **03 Where we are going** (29–40) — *Supply* (30–32), *Access* (33–36),
+  *Capacity* (37–38), why Stanford, and the 75 → 120 plan
+- **Close** (41–43) — three things, the future film, questions
 
 ## Films
 
 | file | length | where |
 |---|---|---|
 | `cold-open.webm` | 42 s | slide 2 — how a donor offer arrives today |
-| `offer-2030.webm` | 30 s | slide 34 — the same offer, machine-read and matched |
-| `future-of-transplant.webm` | 42 s | slide 43 — closing coda |
-
-The cold open contains a real screen recording; all identifiers are blurred
-with a scroll-tracked mask. The donor chart shown in the portal scene is
-fabricated.
+| `offer-2027.webm` | 30 s | slide 32 — the same offer, machine-read and matched |
+| `future-of-transplant.webm` | 52 s | slide 42 — closing coda |
 
 ## Still to confirm before presenting
 
-- PGD harms and cost figures (slide 19)
-- Indigenous disparity data (slide 26)
-- Citations borrowed from a colleague's AI talk, marked teal in the script
-  (slides 20, 23, 28, 33, 41) — verify and credit the originating group
-- Stanford centre and faculty names on slides 40–41
+- Stanford's offer volume, acceptance rate and severe PGD rate (slide 40 arithmetic)
+- The 30-day readmission figure you want to quote (slide 16)
+- Indigenous referral / screening / listing numbers (slide 25)
+- Lori West 2005 citation and the 94 accidental adults (slide 34)
+- JEPA / EchoNet characterization and credit (slide 31)
+- Your age when you left Iran (slide 5)
